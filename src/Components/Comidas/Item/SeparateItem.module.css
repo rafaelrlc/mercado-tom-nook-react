@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-shadow: 5px 5px #cace8f;
+}
+
+.item:hover {
+  background-color: #d6da9e;
+  margin-top: 1.25rem;
+}
+
+@font-face {
+  font-family: "ingame-font";
+  src: url("./FOT-Rodin Pro UB.otf");
+}
+
+.item h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.description {
+  font-weight: 100;
+  color: black;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
