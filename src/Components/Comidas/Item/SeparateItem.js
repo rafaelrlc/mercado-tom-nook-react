@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemFom";
-import bells_img from "./images/bells-icon.png";
-import fish_img from "./images/NH-Icon-betta.webp";
+import bells_img from "../../UI//images/bells-icon.png";
+import fish_img from "../../UI/images/NH-Icon-betta.webp";
 const SeparateItem = (props) => {
   return (
     <li className={classes.item}>

@@ -27,7 +27,7 @@
 }
 @font-face {
   font-family: "ingame-font";
-  src: url("./images/FOT-Rodin Pro UB.otf");
+  src: url("../../UI/fonts/FOT-Rodin Pro UB.otf");
 }
 
 .item h3 {
