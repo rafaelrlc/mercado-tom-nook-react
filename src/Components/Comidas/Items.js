@@ -1,8 +1,8 @@
 import React from "react";
-import SellingItens from "./AvaliableItems";
+import AvaliableItems from "./AvaliableItems";
 
 const Items = () => {
-  return <SellingItens></SellingItens>;
+  return <AvaliableItems></AvaliableItems>;
 };
 
 export default Items;

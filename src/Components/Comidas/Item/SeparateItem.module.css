@@ -5,17 +5,29 @@
   padding-bottom: 1rem;
   border-radius: 1.5rem;
   padding: 1rem;
-  box-shadow: 5px 5px #cace8f;
+  box-shadow: 5px 5px #adadac;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: #f2eded;
 }
-
+.info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
 .item:hover {
-  background-color: #d6da9e;
+  background-color: #eaeae6;
   margin-top: 1.25rem;
 }
 
+.item_info {
+  display: flex;
+  align-items: center;
+}
 @font-face {
   font-family: "ingame-font";
-  src: url("./FOT-Rodin Pro UB.otf");
+  src: url("./images/FOT-Rodin Pro UB.otf");
 }
 
 .item h3 {
@@ -28,8 +40,13 @@
 }
 
 .price {
-  margin-top: 0.25rem;
+  display: flex;
   font-weight: bold;
   color: #ad5502;
   font-size: 1.25rem;
+  align-items: center;
+  gap: 0.25rem;
+}
+.price img {
+  margin-bottom: 3px;
 }

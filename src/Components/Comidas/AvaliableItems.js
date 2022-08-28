@@ -66,13 +66,14 @@ const items_venda = [
   },
 ];
 
-const SellingItens = (props) => {
+const AvaliableItems = (props) => {
   const avaliable_fish = items_venda.map((item) => (
     <SeparateItem
       key={item.id}
       name={item.nome}
       price={item.price}
       description={item.description}
+      item={item}
     ></SeparateItem>
   ));
   return (
@@ -82,4 +83,4 @@ const SellingItens = (props) => {
   );
 };
 
-export default SellingItens;
+export default AvaliableItems;

@@ -1,4 +1,4 @@
-.cart-items {
+.cart_items {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -15,6 +15,20 @@
   margin: 1rem 0;
 }
 
+.actions .close {
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: 0 5px 0px #78a2a2;
+  transition: all 0.2 ease;
+}
+
+.actions .button {
+  color: rgb(255, 255, 255);
+  background-color: #98d4d6;
+  box-shadow: 0 5px 0px #78a2a2;
+  transition: all 0.2 ease;
+}
+
 .actions {
   text-align: right;
 }
@@ -23,24 +37,17 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8a2b06;
+  border: 2px solid #45a2d1;
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
 }
 
-.actions button:hover,
+.actions button:hover {
+  background-color: #8bc2c4;
+  color: white;
+}
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
-  color: white;
-}
-
-.actions .button--alt {
-  color: #8a2b06;
-}
-
-.actions .button {
-  background-color: #8a2b06;
-  color: white;
+  box-shadow: none;
+  margin-top: 2px;
 }

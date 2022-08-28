@@ -1,5 +1,7 @@
 import CartIcon from "./CardIcon";
 import styled from "styled-components";
+import CartContext from "../../store/cart-context";
+import React, { useContext, useState } from "react";
 
 const StyledCartButton = styled.button`
   cursor: pointer;
@@ -7,7 +9,7 @@ const StyledCartButton = styled.button`
   border: none;
   background-color: #f8c59e;
   color: white;
-  padding: 0.8rem 4rem;
+  padding: 0.65rem 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -16,23 +18,26 @@ const StyledCartButton = styled.button`
   margin-left: auto;
   margin-right: 10%;
   box-shadow: 0 8px 0px #d1a788;
+  border: 2px solid #c59d81;
   transition: all 0.2 ease;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  margin-bottom: 3px;
 
   &:hover {
     transition: all 0.2 ease;
     background-color: #eeb990;
-    padding: 0.6rem 3.8rem;
+    padding: 0.5rem 2.8rem;
     top: 8px;
   }
 
   &:active {
+    margin-top: 8px;
     transition: all 0.2 ease;
-    padding: 0.6rem 3.8rem;
     background-color: #efc3a1;
+    box-shadow: none;
   }
 
   .icon {
@@ -82,13 +87,20 @@ const StyledCartButton = styled.button`
 `;
 
 const CartButton = (props) => {
+  const cartCtx = useContext(CartContext);
+  const [counter, setcounter] = useState(0);
+
+  const numCartItens = cartCtx.itemsStored.reduce((total, item) => {
+    return total + item.amount;
+  }, 0);
+
   return (
-    <StyledCartButton>
+    <StyledCartButton onClick={props.onClick}>
       <span className="icon">
         <CartIcon></CartIcon>
       </span>
       <span></span>
-      <span className="badge">{5}</span>
+      <span className="badge">{numCartItens}</span>
     </StyledCartButton>
   );
 };

@@ -1,7 +1,8 @@
 import react from "react";
 import styled from "styled-components";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import CartButton from "./CartButton";
+import CartContext from "../../store/cart-context";
 
 const StyledHeader = styled.header`
   @font-face {
@@ -13,7 +14,7 @@ const StyledHeader = styled.header`
   left: 0;
   width: 100%;
   height: 9rem;
-  background-color: #88c587;
+  background-color: #75a274;
   color: white;
   display: flex;
   align-items: center;
@@ -22,7 +23,7 @@ const StyledHeader = styled.header`
 
   & h1 {
     margin: 0;
-    margin-left: 7%;
+    margin-left: 4%;
     font-family: FinkHeavy;
     font-size: 3.5rem;
     color: white;
@@ -35,12 +36,12 @@ const StyledHeader = styled.header`
   }
 `;
 
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
     <Fragment>
       <StyledHeader>
         <h1>Mercadinho Tom Nook</h1>
-        <CartButton>Cart</CartButton>
+        <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
     </Fragment>
   );

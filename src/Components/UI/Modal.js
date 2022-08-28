@@ -19,7 +19,7 @@ const portalElement = document.getElementById("overlays");
 const Modal = (props) => {
   return (
     <Fragment>
-      <div className={classes.backdrop}></div>
+      <div className={classes.backdrop} onClick={props.onClose}></div>
       <div className={classes.modal}>
         <div>{props.children}</div>
       </div>
