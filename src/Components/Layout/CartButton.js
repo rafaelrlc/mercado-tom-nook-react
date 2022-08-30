@@ -90,17 +90,17 @@ const CartButton = (props) => {
   const cartCtx = useContext(CartContext);
   const [counter, setcounter] = useState(0);
 
-  const numCartItens = cartCtx.itemsStored.reduce((total, item) => {
-    return total + item.amount;
+  const numCartItens1 = cartCtx.itemsStored.reduce((accumulator, object) => {
+    return accumulator + object.amount;
   }, 0);
-
+ 
   return (
     <StyledCartButton onClick={props.onClick}>
       <span className="icon">
         <CartIcon></CartIcon>
       </span>
       <span></span>
-      <span className="badge">{numCartItens}</span>
+      <span className="badge">{numCartItens1}</span>
     </StyledCartButton>
   );
 };

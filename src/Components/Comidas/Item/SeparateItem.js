@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./SeparateItem.module.css";
-import SeparateItemForm from "./SeparateItemFom";
+import SeparateItemForm from "./SeparateItemForm";
 import bells_img from "../../UI//images/bells-icon.png";
 import fish_img from "../../UI/images/NH-Icon-betta.webp";
+import CartContext from "../../../store/cart-context";
 const SeparateItem = (props) => {
+  const cartCtx = useContext(CartContext);
+  const addToCart = (itemAmount) => {
+    cartCtx.addItem({
+      id: props.id,
+      nome: props.nome,
+      price: props.price,
+      amount: itemAmount,
+    });
+  };
   return (
     <li className={classes.item}>
       <div className={classes.info}>
@@ -18,7 +28,10 @@ const SeparateItem = (props) => {
           <img src={bells_img} width="50px" height="50px" />
         </div>
       </div>
-      <SeparateItemForm item={props.item}></SeparateItemForm>
+      <SeparateItemForm
+        item={props.item}
+        onAddToCart={addToCart}
+      ></SeparateItemForm>
     </li>
   );
 };

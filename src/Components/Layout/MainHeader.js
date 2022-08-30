@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
   & h1 {
     margin: 0;
     margin-left: 4%;
+    margin-top: 0.75rem;
     font-family: FinkHeavy;
     font-size: 3.5rem;
     color: white;
@@ -32,7 +33,13 @@ const StyledHeader = styled.header`
   }
 
   & h1:hover {
-    margin-top: 8px;
+    margin-top: 1.25rem;
+  }
+
+  div {
+    color: red;
+    width: 30px;
+    height: 30px;
   }
 `;
 

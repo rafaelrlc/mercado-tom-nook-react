@@ -6,7 +6,7 @@ const Banner = styled.div`
     src: url("../UI/FinkHeavy.ttf");
   }
 
-  width: 60%;
+  width: 50%;
   background-color: #148fa4;
   border: 3px solid #87c2df;
   color: white;
