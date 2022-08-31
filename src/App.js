@@ -25,8 +25,8 @@ function App() {
       {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
       <MainHeader
         onShowCart={showCartHandler}
-        itemType={itemBarType}
-        changeItemType={changeItem}
+        //itemType={itemBarType}
+        //changeItemType={changeItem}
       ></MainHeader>
       <main>
         <ItemBar type={"Peixes"}></ItemBar>

@@ -16,7 +16,7 @@ const StyledCartButton = styled.button`
   border-radius: 1.5rem;
   font-weight: bold;
   margin-left: auto;
-  margin-right: 10%;
+  margin-right: 5%;
   box-shadow: 0 8px 0px #d1a788;
   border: 2px solid #c59d81;
   transition: all 0.2 ease;
@@ -93,7 +93,7 @@ const CartButton = (props) => {
   const numCartItens1 = cartCtx.itemsStored.reduce((accumulator, object) => {
     return accumulator + object.amount;
   }, 0);
- 
+
   return (
     <StyledCartButton onClick={props.onClick}>
       <span className="icon">

@@ -15,8 +15,13 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
+  } else {
+    const updatedItems = state.items.filter((obj) => obj.id != action.id);
+    return {
+      items: updatedItems,
+      totalAmount: state.totalAmount,
+    };
   }
-  return defaultCartState;
 };
 
 const CartProvider = (props) => {

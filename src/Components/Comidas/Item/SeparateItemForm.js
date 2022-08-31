@@ -63,7 +63,6 @@ const SeparateItemForm = (props) => {
     event.preventDefault();
     const enteredAmount = inputAmount.current.value;
     const enteredAmountNum = +enteredAmount;
-    console.log(enteredAmountNum);
 
     if (
       enteredAmount.trim().length === 0 ||

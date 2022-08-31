@@ -1,3 +1,7 @@
+.carttab {
+  width: 100%;
+}
+
 .cart_items {
   list-style: none;
   margin: 0;
@@ -15,21 +19,22 @@
   margin: 1rem 0;
 }
 
-.item_price{
+.item_price {
+  display: flex;
   align-items: center;
 }
 
 .actions .close {
   color: #000000;
   background-color: #ffffff;
-  box-shadow: 0 5px 0px #78a2a2;
+  box-shadow: 0 5px 0px #8ab3b3;
   transition: all 0.2 ease;
 }
 
 .actions .button {
   color: rgb(255, 255, 255);
-  background-color: #98d4d6;
-  box-shadow: 0 5px 0px #78a2a2;
+  background-color: #a1d8da;
+  box-shadow: 0 5px 0px #8ab3b3;
   transition: all 0.2 ease;
 }
 

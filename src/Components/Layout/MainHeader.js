@@ -42,7 +42,7 @@ const StyledHeader = styled.header`
     height: 30px;
   }
 `;
-const StyledItemBar = styled.ul`
+const StyledItemBar = styled.div`
   top: 0;
   left: 0;
   width: 100%;
@@ -61,6 +61,14 @@ const StyledItemBar = styled.ul`
   & a {
     cursor: pointer;
   }
+
+  & a:last-child {
+    margin-right: 10rem;
+  }
+
+  & a:first-child {
+    margin-left: 10rem;
+  }
 `;
 const MainHeader = (props) => {
   return (
@@ -70,15 +78,15 @@ const MainHeader = (props) => {
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
       <StyledItemBar>
-        <li>
-          <a onClick={props.changeItemType("Peixes")}>Peixes</a>
-        </li>
-        <li>
-          <a onClick={props.changeItemType("Villagers")}>Villagers</a>
-        </li>
-        <li>
-          <a onClick={props.changeItemType("Crafts")}>Crafts</a>
-        </li>
+        <div>
+          <a>PEIXES</a>
+        </div>
+        <div>
+          <a>VILLAGERS</a>
+        </div>
+        <div>
+          <a>CRAFTS</a>
+        </div>
       </StyledItemBar>
     </Fragment>
   );
