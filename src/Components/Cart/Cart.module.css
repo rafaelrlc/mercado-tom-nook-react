@@ -15,6 +15,10 @@
   margin: 1rem 0;
 }
 
+.item_price{
+  align-items: center;
+}
+
 .actions .close {
   color: #000000;
   background-color: #ffffff;

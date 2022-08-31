@@ -27,7 +27,6 @@ const CartProvider = (props) => {
       type: "ADD_ITEM",
       item: item,
     });
-    printCart();
   };
 
   const removeItem = (id) => {
@@ -37,9 +36,6 @@ const CartProvider = (props) => {
     });
   };
 
-  const printCart = () => {
-    console.log(cartContext.itemsStored);
-  };
   const cartContext = {
     itemsStored: cartState.items,
     totalAmount: cartState.totalAmount,

@@ -25,7 +25,7 @@ const StyledHeader = styled.header`
     margin: 0;
     margin-left: 4%;
     margin-top: 0.75rem;
-    font-family: FinkHeavy;
+    font-family: "FinkHeavy";
     font-size: 3.5rem;
     color: white;
     padding: 1.5rem;
@@ -42,7 +42,26 @@ const StyledHeader = styled.header`
     height: 30px;
   }
 `;
+const StyledItemBar = styled.ul`
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  font-size: 1.25rem;
+  background-color: #75a274;
+  color: white;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  list-style-type: none;
 
+  & a {
+    cursor: pointer;
+  }
+`;
 const MainHeader = (props) => {
   return (
     <Fragment>
@@ -50,6 +69,17 @@ const MainHeader = (props) => {
         <h1>Mercadinho Tom Nook</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
+      <StyledItemBar>
+        <li>
+          <a onClick={props.changeItemType("Peixes")}>Peixes</a>
+        </li>
+        <li>
+          <a onClick={props.changeItemType("Villagers")}>Villagers</a>
+        </li>
+        <li>
+          <a onClick={props.changeItemType("Crafts")}>Crafts</a>
+        </li>
+      </StyledItemBar>
     </Fragment>
   );
 };
