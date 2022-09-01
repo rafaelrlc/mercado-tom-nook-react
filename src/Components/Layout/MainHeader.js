@@ -1,9 +1,8 @@
-import react from "react";
 import styled from "styled-components";
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
 import CartButton from "./CartButton";
-import CartContext from "../../store/cart-context";
 
+import tom_nook_nav from "../UI/images/kindpng_6766832.png";
 const StyledHeader = styled.header`
   @font-face {
     font-family: "FinkHeavy";
@@ -20,10 +19,16 @@ const StyledHeader = styled.header`
   align-items: center;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
+  & img {
+    margin-left: 2%;
+  }
 
+  & img:hover {
+    margin-top: 0.75rem;
+  }
   & h1 {
     margin: 0;
-    margin-left: 4%;
+    margin-left: 2%;
     margin-top: 0.75rem;
     font-family: "FinkHeavy";
     font-size: 3.5rem;
@@ -74,6 +79,7 @@ const MainHeader = (props) => {
   return (
     <Fragment>
       <StyledHeader>
+        <img src={tom_nook_nav} width="80px" height="80px" />
         <h1>Mercadinho Tom Nook</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>

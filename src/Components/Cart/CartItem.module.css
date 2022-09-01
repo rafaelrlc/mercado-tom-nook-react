@@ -9,7 +9,7 @@
 
 .cart-item h2 {
   margin: 0 0 0.5rem 0;
-  color: #468b8e;
+  color: #29696c;
 }
 
 .summary {
@@ -25,8 +25,12 @@
   align-items: center;
 }
 
+.summary_price img {
+  margin-bottom: 3px;
+}
 .price {
   font-weight: bold;
+  font-size: 1.35rem;
   color: #000000;
 }
 

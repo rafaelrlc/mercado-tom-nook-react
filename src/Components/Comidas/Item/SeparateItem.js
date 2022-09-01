@@ -9,7 +9,7 @@ const SeparateItem = (props) => {
   const addToCart = (itemAmount) => {
     cartCtx.addItem({
       id: props.id,
-      nome: props.nome,
+      name: props.name,
       price: props.price,
       amount: itemAmount,
     });

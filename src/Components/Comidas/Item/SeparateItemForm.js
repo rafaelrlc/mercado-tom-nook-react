@@ -45,8 +45,8 @@ const AddButton = styled.button`
   }
 
   &:active {
-    box-shadow: none;
-    margin-top: 0.4rem;
+    box-shadow: ${(props) => props.shadow};
+    margin-top: ${(props) => props.margintop};
   }
 
   &.invalid_amount {
@@ -97,6 +97,8 @@ const SeparateItemForm = (props) => {
       <AddButton
         type="submit"
         invalid_border={!amountIsValid ? "red" : "#0f4a61"}
+        shadow={!amountIsValid ? "0 5px 0px #7cadad" : "none"}
+        margintop={!amountIsValid ? "0" : "0.4rem"}
         onBlur={clearInvalid}
       >
         ADD

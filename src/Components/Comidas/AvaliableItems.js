@@ -1,72 +1,80 @@
-
 import Card from "../UI/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./Item/SeparateItem";
-import fish_img from "../UI/images/NH-Icon-betta.webp";
+import fish_img1 from "../UI/images/NH-Icon-betta.webp";
+import fish_img2 from "../UI/images/NH-Icon-palechub.webp";
+import fish_img3 from "../UI/images/NH-Icon-cruciancarp.webp";
 
 const items_venda = [
   {
     id: "i1",
-    nome: "Bitterling",
+    name: "Bitterling",
     price: "900",
     description: "um peixe ai",
-    image : fish_img
+    image: fish_img1,
   },
   {
     id: "i2",
-    nome: "Pale Chub",
+    name: "Pale Chub",
     price: "200",
     description: "um peixe ai",
-    image : fish_img
+    image: fish_img2,
   },
   {
     id: "i3",
-    nome: "Crucian Carp",
+    name: "Crucian Carp",
     price: "160",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img3,
   },
   {
     id: "i4",
-    nome: "Dace",
+    name: "Dace",
     price: "240",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i5",
-    nome: "Card",
+    name: "Card",
     price: "300",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i6",
-    nome: "Koi",
+    name: "Koi",
     price: "4000",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i7",
-    nome: "Goldfish",
+    name: "Goldfish",
     price: "1300",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i8",
-    nome: "Pop Eyed Goldfish",
+    name: "Pop Eyed Goldfish",
     price: "1300",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i9",
-    nome: "Ranchu Goldfish",
+    name: "Ranchu Goldfish",
     price: "4500",
-    description: "um peixe ai",    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
   {
     id: "i10",
-    nome: "Killifish",
+    name: "Killifish",
     price: "300",
-    description: "um peixe ai",    
-    image : fish_img
+    description: "um peixe ai",
+    image: fish_img1,
   },
 ];
 
@@ -74,7 +82,7 @@ const AvaliableItems = (props) => {
   const avaliable_fish = items_venda.map((item) => (
     <SeparateItem
       key={item.id}
-      name={item.nome}
+      name={item.name}
       price={item.price}
       description={item.description}
       item={item}
