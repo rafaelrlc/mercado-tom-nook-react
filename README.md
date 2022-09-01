@@ -1,6 +1,15 @@
 # https://rafaelrlc.github.io/mercado-tom-nook-react/
 (ainda falta bastante coisa a ser implementada)
 
+* Arrumar items repetidos no carrinho-context
+* Adicionar imagem a cada peixe no seu respectivo objeto
+* Arrumar botão de mais e menos no carrinho
+* Adicionar barra com outras opções de itens (ex: crafts e villagers)
+* Arrumar responsividade (ultima coisa)
+* Implementar Back-end com Firebase
+* Adicionar mais animações com CSS ao site
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
