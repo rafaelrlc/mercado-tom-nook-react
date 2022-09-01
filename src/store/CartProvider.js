@@ -1,6 +1,13 @@
 import React, { useReducer, useState } from "react";
 import CartContext from "./cart-context";
 
+const findRemoveIndex = (array, value) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].id == value) {
+      return array[i].price;
+    }
+  }
+};
 const defaultCartState = {
   items: [],
   totalAmount: 0,
@@ -15,12 +22,14 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
-  } else if (action.type === "REMOVE_ITEM") {
+  } else {
+    const reduceValue = findRemoveIndex(state.items, action.id);
+
+    const updatedTotalAmount = state.totalAmount - reduceValue;
     const updatedItems = state.items.filter((obj) => obj.id != action.id);
-    //console.log(updatedItems);
     return {
       items: updatedItems,
-      totalAmount: state.totalAmount,
+      totalAmount: updatedTotalAmount,
     };
   }
 };

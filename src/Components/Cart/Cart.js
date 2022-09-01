@@ -14,14 +14,13 @@ const Cart = (props) => {
   const addCartItem = (item) => {};
 
   const removeCartItem = (id) => {
-    console.log(id);
-    //cartCtx.removeItem(id);
+    cartCtx.removeItem(id);
   };
   const cartItems = (
     <ul className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
         <CartItem
-          key={item.id}
+          id={item.id}
           name={item.name}
           amount={item.amount}
           price={item.price}

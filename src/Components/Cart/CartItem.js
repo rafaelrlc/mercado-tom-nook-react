@@ -2,7 +2,7 @@ import classes from "./CartItem.module.css";
 import bells_img from "../UI/images/bells-icon.png";
 const CartItem = (props) => {
   return (
-    <li className={classes["cart-item"]} key={props.key}>
+    <li className={classes["cart-item"]} id={props.id}>
       <div>
         <h2>{props.name}</h2>
         <div className={classes.summary}>

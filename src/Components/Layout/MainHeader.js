@@ -48,11 +48,17 @@ const StyledHeader = styled.header`
   }
 `;
 const StyledItemBar = styled.div`
+  @font-face {
+    font-family: "FinkHeavy";
+    src: url("../UI/FinkHeavy.ttf");
+  }
+
   top: 0;
   left: 0;
   width: 100%;
   height: 3.5rem;
   font-size: 1.25rem;
+  font-family: "FinkHeavy";
   background-color: #75a274;
   color: white;
   margin-top: 1rem;
@@ -83,7 +89,7 @@ const MainHeader = (props) => {
         <h1>Mercadinho Tom Nook</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
-      <StyledItemBar>
+      {/* <StyledItemBar>
         <div>
           <a>PEIXES</a>
         </div>
@@ -93,7 +99,7 @@ const MainHeader = (props) => {
         <div>
           <a>CRAFTS</a>
         </div>
-      </StyledItemBar>
+      </StyledItemBar> */}
     </Fragment>
   );
 };

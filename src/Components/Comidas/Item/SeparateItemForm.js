@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import CartContext from "../../../store/cart-context";
 import "./SeparateItemForm.css";
+
 const StyledItemForm = styled.form`
   display: flex;
   align-items: center;
@@ -32,6 +33,7 @@ const AddButton = styled.button`
   border: 2px solid #66b1d6;
   color: #0f4a61;
   color: ${(props) => props.invalid_border};
+
   transition: all 0.2 ease;
   top: 0;
   right: 0;

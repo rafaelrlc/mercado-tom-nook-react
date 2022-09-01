@@ -81,7 +81,7 @@ const items_venda = [
 const AvaliableItems = (props) => {
   const avaliable_fish = items_venda.map((item) => (
     <SeparateItem
-      key={item.id}
+      id={item.id}
       name={item.name}
       price={item.price}
       description={item.description}
