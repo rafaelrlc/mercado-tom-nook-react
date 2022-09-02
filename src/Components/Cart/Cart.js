@@ -11,7 +11,14 @@ const Cart = (props) => {
 
   const showOrderButton = cartCtx.itemsStored.length > 0;
 
-  const addCartItem = (item) => {};
+  const addCartItem = (item) => {
+    cartCtx.addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      amount: 1,
+    });
+  };
 
   const removeCartItem = (id) => {
     cartCtx.removeItem(id);

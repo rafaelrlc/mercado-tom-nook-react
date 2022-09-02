@@ -16,6 +16,7 @@ function App() {
   const hideCartHandler = () => {
     setCartShow(false);
   };
+
   const changeItem = (type) => {
     setItemBarType(type);
   };
@@ -25,11 +26,11 @@ function App() {
       {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
       <MainHeader
         onShowCart={showCartHandler}
-        //itemType={itemBarType}
-        //changeItemType={changeItem}
+        itemType={itemBarType}
+        changeItemType={changeItem}
       ></MainHeader>
       <main>
-        <ItemBar type={"Peixes"}></ItemBar>
+        <ItemBar type={itemBarType}></ItemBar>
         <Items></Items>
       </main>
     </CartProvider>

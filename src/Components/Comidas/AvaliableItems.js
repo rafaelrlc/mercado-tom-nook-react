@@ -2,40 +2,38 @@ import Card from "../UI/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./Item/SeparateItem";
 import fish_img1 from "../UI/images/NH-Icon-betta.webp";
-import fish_img2 from "../UI/images/NH-Icon-palechub.webp";
-import fish_img3 from "../UI/images/NH-Icon-cruciancarp.webp";
 
 const items_venda = [
   {
-    id: "i1",
+    key: "i1",
     name: "Bitterling",
     price: "900",
     description: "um peixe ai",
     image: fish_img1,
   },
   {
-    id: "i2",
+    key: "i2",
     name: "Pale Chub",
     price: "200",
     description: "um peixe ai",
-    image: fish_img2,
+    image: fish_img1,
   },
   {
-    id: "i3",
+    key: "i3",
     name: "Crucian Carp",
     price: "160",
     description: "um peixe ai",
-    image: fish_img3,
+    image: fish_img1,
   },
   {
-    id: "i4",
+    key: "i4",
     name: "Dace",
     price: "240",
     description: "um peixe ai",
     image: fish_img1,
   },
   {
-    id: "i5",
+    key: "i5",
     name: "Card",
     price: "300",
     description: "um peixe ai",
@@ -49,28 +47,28 @@ const items_venda = [
     image: fish_img1,
   },
   {
-    id: "i7",
+    key: "i7",
     name: "Goldfish",
     price: "1300",
     description: "um peixe ai",
     image: fish_img1,
   },
   {
-    id: "i8",
+    key: "i8",
     name: "Pop Eyed Goldfish",
     price: "1300",
     description: "um peixe ai",
     image: fish_img1,
   },
   {
-    id: "i9",
+    key: "i9",
     name: "Ranchu Goldfish",
     price: "4500",
     description: "um peixe ai",
     image: fish_img1,
   },
   {
-    id: "i10",
+    key: "i10",
     name: "Killifish",
     price: "300",
     description: "um peixe ai",
@@ -79,9 +77,9 @@ const items_venda = [
 ];
 
 const AvaliableItems = (props) => {
-  const avaliable_fish = items_venda.map((item) => (
+  const avaliable_items = items_venda.map((item) => (
     <SeparateItem
-      id={item.id}
+      id={item.key}
       name={item.name}
       price={item.price}
       description={item.description}
@@ -90,7 +88,7 @@ const AvaliableItems = (props) => {
   ));
   return (
     <Card className={classes.container_vendas}>
-      <ul>{avaliable_fish}</ul>
+      <ul>{avaliable_items}</ul>
     </Card>
   );
 };

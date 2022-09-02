@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import CartButton from "./CartButton";
 
 import tom_nook_nav from "../UI/images/kindpng_6766832.png";
+import { useContext } from "react";
+import { useRef } from "react";
 const StyledHeader = styled.header`
   @font-face {
     font-family: "FinkHeavy";
@@ -82,6 +84,14 @@ const StyledItemBar = styled.div`
   }
 `;
 const MainHeader = (props) => {
+  const anchorLabel = useRef();
+
+  const changeItem = () => {
+    const type = anchorLabel.current.value;
+    console.log(type);
+    props.changeItemType(type);
+  };
+
   return (
     <Fragment>
       <StyledHeader>
@@ -89,17 +99,23 @@ const MainHeader = (props) => {
         <h1>Mercadinho Tom Nook</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
-      {/* <StyledItemBar>
+      <StyledItemBar>
         <div>
-          <a>PEIXES</a>
+          <a value="Peixes" ref={anchorLabel} onClick={changeItem}>
+            PEIXES
+          </a>
         </div>
         <div>
-          <a>VILLAGERS</a>
+          <a value="Villagers" ref={anchorLabel} onClick={changeItem}>
+            VILLAGERS
+          </a>
         </div>
         <div>
-          <a>CRAFTS</a>
+          <a value="Crafts" ref={anchorLabel} onClick={changeItem}>
+            CRAFTS
+          </a>
         </div>
-      </StyledItemBar> */}
+      </StyledItemBar>
     </Fragment>
   );
 };

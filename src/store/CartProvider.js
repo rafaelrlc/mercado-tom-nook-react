@@ -1,10 +1,10 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import CartContext from "./cart-context";
 
-const findRemoveIndex = (array, value) => {
+const findIndexOf = (array, value) => {
   for (let i = 0; i < array.length; i++) {
-    if (array[i].id == value) {
-      return array[i].price;
+    if (array[i].id === value) {
+      return i;
     }
   }
 };
@@ -15,18 +15,47 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
-    const updatedItems = state.items.concat(action.item);
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
+
+    const repeatedItemIndex = findIndexOf(state.items, action.item.id);
+
+    const repeatedCartItem = state.items[repeatedItemIndex];
+
+    let updatedItems;
+    let updatedItem;
+
+    if (repeatedCartItem) {
+      updatedItem = {
+        ...repeatedCartItem,
+        amount: repeatedCartItem.amount + action.item.amount,
+      };
+      updatedItems = state.items;
+      updatedItems[repeatedItemIndex] = updatedItem;
+    } else {
+      updatedItems = state.items.concat(action.item);
+    }
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
   } else {
-    const reduceValue = findRemoveIndex(state.items, action.id);
+    const removeIndex = findIndexOf(state.items, action.id);
 
-    const updatedTotalAmount = state.totalAmount - reduceValue;
-    const updatedItems = state.items.filter((obj) => obj.id != action.id);
+    const updatedTotalAmount =
+      state.totalAmount - state.items[removeIndex].price;
+    let updatedItems = state.items;
+
+    if (state.items[removeIndex].amount === 1) {
+      updatedItems = state.items.filter((item) => item.id !== action.id);
+    } else {
+      const updatedItem = {
+        ...updatedItems[removeIndex],
+        amount: state.items[removeIndex].amount - 1,
+      };
+      updatedItems[removeIndex] = updatedItem;
+    }
+
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
