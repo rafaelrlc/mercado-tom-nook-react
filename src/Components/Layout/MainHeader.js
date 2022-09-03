@@ -71,27 +71,36 @@ const StyledItemBar = styled.div`
   z-index: 10;
   list-style-type: none;
 
-  & a {
+  & h3 {
+    margin: 0;
+    margin-top: 6px;
     cursor: pointer;
   }
 
-  & a:last-child {
+  & h3:last-child {
     margin-right: 10rem;
   }
 
-  & a:first-child {
+  & h3:first-child {
     margin-left: 10rem;
   }
 `;
 const MainHeader = (props) => {
-  const anchorLabel = useRef();
-
-  const changeItem = () => {
-    const type = anchorLabel.current.value;
-    console.log(type);
+  let type;
+  const changeItemFish = () => {
+    type = "Peixes";
     props.changeItemType(type);
   };
 
+  const changeItemFossil = () => {
+    type = "Fossil";
+    props.changeItemType(type);
+  };
+
+  const changeItemBugs = () => {
+    type = "Bugs";
+    props.changeItemType(type);
+  };
   return (
     <Fragment>
       <StyledHeader>
@@ -101,19 +110,19 @@ const MainHeader = (props) => {
       </StyledHeader>
       <StyledItemBar>
         <div>
-          <a value="Peixes" ref={anchorLabel} onClick={changeItem}>
+          <h3 value="Peixes" onClick={changeItemFish}>
             PEIXES
-          </a>
+          </h3>
         </div>
         <div>
-          <a value="Villagers" ref={anchorLabel} onClick={changeItem}>
-            VILLAGERS
-          </a>
+          <h3 value="Fossil" onClick={changeItemFossil}>
+            FOSSIL
+          </h3>
         </div>
         <div>
-          <a value="Crafts" ref={anchorLabel} onClick={changeItem}>
-            CRAFTS
-          </a>
+          <h3 value="Bugs" onClick={changeItemBugs}>
+            BUGS
+          </h3>
         </div>
       </StyledItemBar>
     </Fragment>

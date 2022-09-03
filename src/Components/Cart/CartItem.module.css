@@ -1,4 +1,4 @@
-.cart-item {
+.cart_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,12 @@
   margin: 1rem 0;
 }
 
-.cart-item h2 {
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.cart_item h2 {
   margin: 0 0 0.5rem 0;
   color: #29696c;
 }
@@ -53,7 +58,7 @@
   }
 }
 
-.cart-item button {
+.cart_item button {
   font: inherit;
   font-weight: bold;
   font-size: 1.25rem;
@@ -69,12 +74,12 @@
   margin: 0.25rem;
 }
 
-.cart-item button:hover {
+.cart_item button:hover {
   background-color: #98d4d6;
   color: white;
 }
 
-.cart-item button:active {
+.cart_item button:active {
   margin-top: 8px;
   box-shadow: none;
 }

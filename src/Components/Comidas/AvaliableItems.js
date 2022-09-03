@@ -1,89 +1,303 @@
 import Card from "../UI/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./Item/SeparateItem";
+import styled from "styled-components";
 import fish_img1 from "../UI/images/NH-Icon-betta.webp";
 
-const items_venda = [
-  {
-    key: "i1",
-    name: "Bitterling",
-    price: "900",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i2",
-    name: "Pale Chub",
-    price: "200",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i3",
-    name: "Crucian Carp",
-    price: "160",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i4",
-    name: "Dace",
-    price: "240",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i5",
-    name: "Card",
-    price: "300",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    id: "i6",
-    name: "Koi",
-    price: "4000",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i7",
-    name: "Goldfish",
-    price: "1300",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i8",
-    name: "Pop Eyed Goldfish",
-    price: "1300",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i9",
-    name: "Ranchu Goldfish",
-    price: "4500",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
-  {
-    key: "i10",
-    name: "Killifish",
-    price: "300",
-    description: "um peixe ai",
-    image: fish_img1,
-  },
+const items_stored = [
+  [
+    {
+      key: "i1",
+      name: "Bitterling",
+      price: "900",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ea/NH-Icon-bitterling.png/revision/latest?cb=20200401003128",
+    },
+    {
+      key: "i2",
+      name: "Pale Chub",
+      price: "200",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-palechub.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i3",
+      name: "Crucian Carp",
+      price: "160",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/0/03/NH-Icon-cruciancarp.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i4",
+      name: "Dace",
+      price: "240",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-dace.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i5",
+      name: "Carp",
+      price: "300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-carp.png/revision/latest?cb=20200401003129",
+    },
+    {
+      id: "i6",
+      name: "Koi",
+      price: "4000",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/7/74/NH-Icon-koi.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i7",
+      name: "Goldfish",
+      price: "1300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ed/NH-Icon-goldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i8",
+      name: "Pop Eyed Goldfish",
+      price: "1300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c9/NH-Icon-popeyedgoldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i9",
+      name: "Ranchu Goldfish",
+      price: "4500",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-ranchugoldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "i10",
+      name: "Killifish",
+      price: "300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-killifish.png/revision/latest?cb=20200401003129",
+    },
+
+    {
+      key: "i11",
+      name: "Crawfish",
+      price: "200",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/cd/NH-Icon-crawfish.png/revision/latest?cb=20200401003129",
+    },
+  ],
+
+  [
+    {
+      key: "e1",
+      name: "Queen Alexandra's Birdwing",
+      price: "4000",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b8/NH-Icon-queenalexandrasbirdwing.png/revision/latest?cb=20200401005429",
+    },
+    {
+      key: "e2",
+      name: "Moth",
+      price: "130",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/1/12/NH-Icon-moth.png/revision/latest?cb=20200401005428",
+    },
+    {
+      key: "e3",
+      name: "Atlas Moth",
+      price: "3000",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6a/NH-Icon-atlasmoth.png/revision/latest?cb=20200401005428",
+    },
+    {
+      id: "e4",
+      name: "KoMadagascan Sunset Mothi",
+      price: "2500",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7d/NH-Icon-madagascansunsetmoth.png/revision/latest?cb=20200401005429",
+    },
+    {
+      key: "e5",
+      name: "Emperor Butterfly",
+      price: "4000",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5e/NH-Icon-emperorbutterfly.png/revision/latest?cb=20200401005428",
+    },
+    {
+      key: "e6",
+      name: "Long Lacust",
+      price: "200",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ef/NH-Icon-longlocust.png/revision/latest?cb=20200401005429",
+    },
+    {
+      key: "e7",
+      name: "Migratory Locust",
+      price: "600",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e4/NH-Icon-migratorylocust.png/revision/latest?cb=20200401005429",
+    },
+    {
+      key: "e8",
+      name: "Rice Grasshopper",
+      price: "160",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/d/d3/NH-Icon-ricegrasshopper.png/revision/latest?cb=20200401005428",
+    },
+
+    {
+      key: "e9",
+      name: "Cricket",
+      price: "130",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7a/NH-Icon-cricket.png/revision/latest?cb=20200401005428",
+    },
+    {
+      key: "e10",
+      name: "Bell Cricket",
+      price: "430",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/9/99/NH-Icon-bellcricket.png/revision/latest?cb=20200401005428",
+    },
+    {
+      key: "e11",
+      name: "Mantis",
+      price: "430",
+      descripton: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/0/00/NH-Icon-mantis.png/revision/latest?cb=20200401005429",
+    },
+  ],
+  [
+    {
+      key: "a1",
+      name: "BITTERLING2",
+      price: "900",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ea/NH-Icon-bitterling.png/revision/latest?cb=20200401003128",
+    },
+    {
+      key: "a2",
+      name: "Pale Chub",
+      price: "200",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-palechub.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a3",
+      name: "Crucian Carp",
+      price: "160",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/0/03/NH-Icon-cruciancarp.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a4",
+      name: "Dace",
+      price: "240",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-dace.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a5",
+      name: "Carp",
+      price: "300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-carp.png/revision/latest?cb=20200401003129",
+    },
+    {
+      id: "a6",
+      name: "Koi",
+      price: "4000",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/7/74/NH-Icon-koi.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a7",
+      name: "Goldfish",
+      price: "1300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ed/NH-Icon-goldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a8",
+      name: "Pop Eyed Goldfish",
+      price: "1300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c9/NH-Icon-popeyedgoldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a9",
+      name: "Ranchu Goldfish",
+      price: "4500",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-ranchugoldfish.png/revision/latest?cb=20200401003129",
+    },
+    {
+      key: "a10",
+      name: "Killifish",
+      price: "300",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-killifish.png/revision/latest?cb=20200401003129",
+    },
+
+    {
+      key: "a11",
+      name: "Crawfish",
+      price: "200",
+      description: "um peixe ai",
+      image:
+        "https://vignette.wikia.nocookie.net/animalcrossing/images/c/cd/NH-Icon-crawfish.png/revision/latest?cb=20200401003129",
+    },
+  ],
 ];
 
 const AvaliableItems = (props) => {
-  const avaliable_items = items_venda.map((item) => (
+  let itemIndex;
+  if (props.type === "Peixes") {
+    itemIndex = 0;
+  } else if (props.type === "Fossil") {
+    itemIndex = 2;
+  } else {
+    itemIndex = 1;
+  }
+
+  const avaliable_items = items_stored[itemIndex].map((item) => (
     <SeparateItem
       id={item.key}
       name={item.name}
       price={item.price}
       description={item.description}
-      item={item}
+      image={item.image}
     ></SeparateItem>
   ));
   return (

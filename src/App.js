@@ -31,7 +31,7 @@ function App() {
       ></MainHeader>
       <main>
         <ItemBar type={itemBarType}></ItemBar>
-        <Items></Items>
+        <Items type={itemBarType}></Items>
       </main>
     </CartProvider>
   );

@@ -23,6 +23,10 @@ const Cart = (props) => {
   const removeCartItem = (id) => {
     cartCtx.removeItem(id);
   };
+
+  const clearCart = () => {
+    cartCtx.clearCartItem();
+  };
   const cartItems = (
     <ul className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
@@ -31,6 +35,7 @@ const Cart = (props) => {
           name={item.name}
           amount={item.amount}
           price={item.price}
+          image={item.image}
           onRemove={removeCartItem.bind(null, item.id)}
           onAdd={addCartItem.bind(null, item)}
         ></CartItem>
@@ -52,6 +57,11 @@ const Cart = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
+        {showOrderButton && (
+          <button onClick={clearCart} className={classes.close}>
+            Limpar Carrinho
+          </button>
+        )}
         <button onClick={props.onHideCart} className={classes.close}>
           Fechar
         </button>

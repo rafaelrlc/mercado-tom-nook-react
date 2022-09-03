@@ -2,9 +2,14 @@ import classes from "./CartItem.module.css";
 import bells_img from "../UI/images/bells-icon.png";
 const CartItem = (props) => {
   return (
-    <li className={classes["cart-item"]} id={props.id}>
+    <li className={classes.cart_item} id={props.id}>
       <div>
-        <h2>{props.name}</h2>
+        <div className={classes.item}>
+          {" "}
+          <img src={props.image} width="45px" height="45px" />
+          <h2>{props.name}</h2>
+        </div>
+
         <div className={classes.summary}>
           <div className={classes.summary_price}>
             <span className={classes.price}>{props.price}</span>

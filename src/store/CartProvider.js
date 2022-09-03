@@ -8,6 +8,7 @@ const findIndexOf = (array, value) => {
     }
   }
 };
+
 const defaultCartState = {
   items: [],
   totalAmount: 0,
@@ -39,7 +40,7 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
-  } else {
+  } else if (action.type === "REMOVE_ITEM") {
     const removeIndex = findIndexOf(state.items, action.id);
 
     const updatedTotalAmount =
@@ -59,6 +60,14 @@ const cartReducer = (state, action) => {
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
+    };
+  } else {
+    state.items = [];
+    state.totalAmount = 0;
+
+    return {
+      items: state.items,
+      totalAmount: state.totalAmount,
     };
   }
 };
@@ -80,11 +89,18 @@ const CartProvider = (props) => {
     });
   };
 
+  const clearCartItem = () => {
+    cartAction({
+      type: "CLEAR_CART",
+    });
+  };
+
   const cartContext = {
     itemsStored: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItem,
     removeItem: removeItem,
+    clearCartItem: clearCartItem,
   };
   return (
     <CartContext.Provider value={cartContext}>
