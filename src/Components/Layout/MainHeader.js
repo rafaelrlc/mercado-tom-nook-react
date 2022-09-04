@@ -3,8 +3,7 @@ import { Fragment } from "react";
 import CartButton from "./CartButton";
 
 import tom_nook_nav from "../UI/images/kindpng_6766832.png";
-import { useContext } from "react";
-import { useRef } from "react";
+
 const StyledHeader = styled.header`
   @font-face {
     font-family: "FinkHeavy";
@@ -54,7 +53,6 @@ const StyledItemBar = styled.div`
     font-family: "FinkHeavy";
     src: url("../UI/FinkHeavy.ttf");
   }
-
   top: 0;
   left: 0;
   width: 100%;
@@ -70,18 +68,51 @@ const StyledItemBar = styled.div`
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
   list-style-type: none;
+`;
 
-  & h3 {
-    margin: 0;
-    margin-top: 6px;
-    cursor: pointer;
+const StyledButton = styled.button`
+  margin: 0;
+  cursor: pointer;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #f8c59e;
+  color: white;
+  padding: 0.25rem 1.25rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 5%;
+  box-shadow: 0 5px 0px #d1a788;
+  border: 2px solid #c59d81;
+  transition: all 0.2 ease;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 5px;
+
+  &:hover {
+    transition: all 0.2 ease;
+    background-color: #eeb990;
+    top: 8px;
   }
 
-  & h3:last-child {
+  &:active {
+    margin-top: 5px;
+    transition: all 0.2 ease;
+    background-color: #efc3a1;
+    box-shadow: none;
+  }
+
+  &:last-child {
     margin-right: 10rem;
   }
 
-  & h3:first-child {
+  &:first-child {
     margin-left: 10rem;
   }
 `;
@@ -110,19 +141,19 @@ const MainHeader = (props) => {
       </StyledHeader>
       <StyledItemBar>
         <div>
-          <h3 value="Peixes" onClick={changeItemFish}>
+          <StyledButton value="Peixes" onClick={changeItemFish}>
             PEIXES
-          </h3>
+          </StyledButton>
         </div>
         <div>
-          <h3 value="Fossil" onClick={changeItemFossil}>
+          <StyledButton value="Fossil" onClick={changeItemFossil}>
             FOSSIL
-          </h3>
+          </StyledButton>
         </div>
         <div>
-          <h3 value="Bugs" onClick={changeItemBugs}>
+          <StyledButton value="Bugs" onClick={changeItemBugs}>
             BUGS
-          </h3>
+          </StyledButton>
         </div>
       </StyledItemBar>
     </Fragment>

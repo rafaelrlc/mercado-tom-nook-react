@@ -43,8 +43,7 @@
   font-weight: bold;
   border: 1px solid #ccc;
   padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  color: #000000;
+  border-radius: 8px;
 }
 
 .actions {
