@@ -1,4 +1,3 @@
-# https://rafaelrlc.github.io/mercado-tom-nook-react/
 (ainda falta bastante coisa a ser implementada)
 
 * Arrumar items repetidos no carrinho-context ✅
