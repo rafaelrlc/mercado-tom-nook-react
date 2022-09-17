@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fragment } from "react";
 import CartButton from "./CartButton";
+import Button from "../UI/Button";
 
 import tom_nook_nav from "../UI/images/kindpng_6766832.png";
 
@@ -70,66 +71,20 @@ const StyledItemBar = styled.div`
   list-style-type: none;
 `;
 
-const StyledButton = styled.button`
-  margin: 0;
-  cursor: pointer;
-  cursor: pointer;
-  font: inherit;
-  border: none;
-  background-color: #f8c59e;
-  color: white;
-  padding: 0.25rem 1.25rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 1.5rem;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: 5%;
-  box-shadow: 0 5px 0px #d1a788;
-  border: 2px solid #c59d81;
-  transition: all 0.2 ease;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  margin-bottom: 5px;
-
-  &:hover {
-    transition: all 0.2 ease;
-    background-color: #eeb990;
-    top: 8px;
-  }
-
-  &:active {
-    margin-top: 5px;
-    transition: all 0.2 ease;
-    background-color: #efc3a1;
-    box-shadow: none;
-  }
-
-  &:last-child {
-    margin-right: 10rem;
-  }
-
-  &:first-child {
-    margin-left: 10rem;
-  }
-`;
 const MainHeader = (props) => {
   let type;
   const changeItemFish = () => {
-    type = "Peixes";
+    type = "fish";
     props.changeItemType(type);
   };
 
   const changeItemFossil = () => {
-    type = "Fossil";
+    type = "fossils";
     props.changeItemType(type);
   };
 
   const changeItemBugs = () => {
-    type = "Bugs";
+    type = "bugs";
     props.changeItemType(type);
   };
   return (
@@ -141,19 +96,19 @@ const MainHeader = (props) => {
       </StyledHeader>
       <StyledItemBar>
         <div>
-          <StyledButton value="Peixes" onClick={changeItemFish}>
+          <Button value="Peixes" onClick={changeItemFish}>
             PEIXES
-          </StyledButton>
+          </Button>
         </div>
         <div>
-          <StyledButton value="Fossil" onClick={changeItemFossil}>
+          <Button value="Fossil" onClick={changeItemFossil}>
             FOSSIL
-          </StyledButton>
+          </Button>
         </div>
         <div>
-          <StyledButton value="Bugs" onClick={changeItemBugs}>
+          <Button value="Bugs" onClick={changeItemBugs}>
             BUGS
-          </StyledButton>
+          </Button>
         </div>
       </StyledItemBar>
     </Fragment>

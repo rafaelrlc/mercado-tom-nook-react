@@ -7,7 +7,7 @@ import CartProvider from "./store/CartProvider";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
-  const [itemBarType, setItemBarType] = useState("Peixes");
+  const [itemBarType, setItemBarType] = useState("fish");
 
   const showCartHandler = () => {
     setCartShow(true);

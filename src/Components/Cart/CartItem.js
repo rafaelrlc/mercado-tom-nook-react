@@ -1,5 +1,4 @@
 import classes from "./CartItem.module.css";
-import bells_img from "../UI/images/bells-icon.png";
 const CartItem = (props) => {
   return (
     <li className={classes.cart_item} id={props.id}>
@@ -14,7 +13,11 @@ const CartItem = (props) => {
           <div className={classes.summary_price}>
             <span className={classes.price}>{props.price}</span>
 
-            <img src={bells_img} width="35px" height="35px" />
+            <img
+              src="https://nook-central.herokuapp.com/images/bells-icon.png"
+              width="35px"
+              height="35px"
+            />
           </div>
 
           <span className={classes.amount}>x {props.amount}</span>

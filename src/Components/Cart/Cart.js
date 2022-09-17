@@ -2,8 +2,6 @@ import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import { useContext } from "react";
 import CartContext from "../../store/cart-context";
-import fish_img from "../UI/images/NH-Icon-betta.webp";
-import bells_img from "../UI/images/bells-icon.png";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
@@ -53,7 +51,11 @@ const Cart = (props) => {
         )}
         <div className={classes.item_price}>
           <span>{cartCtx.totalAmount}</span>
-          <img src={bells_img} width="50px" height="50px" />
+          <img
+            src="https://nook-central.herokuapp.com/images/bells-icon.png"
+            width="50px"
+            height="50px"
+          />
         </div>
       </div>
       <div className={classes.actions}>

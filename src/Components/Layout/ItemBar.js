@@ -18,6 +18,10 @@ const Banner = styled.div`
   border-radius: 1.25rem;
   padding: 0.25rem 1rem;
 
+  &:hover {
+    background-color: #14899e;
+  }
+
   & h3 {
     margin: 0;
     margin-top: 0.5rem;

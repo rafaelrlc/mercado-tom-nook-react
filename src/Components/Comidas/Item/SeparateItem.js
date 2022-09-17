@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemForm";
-import bells_img from "../../UI//images/bells-icon.png";
 import CartContext from "../../../store/cart-context";
 const SeparateItem = (props) => {
   const cartCtx = useContext(CartContext);
@@ -25,7 +24,11 @@ const SeparateItem = (props) => {
 
         <div className={classes.price}>
           <span>{props.price}</span>
-          <img src={bells_img} width="50px" height="50px" />
+          <img
+            src="https://nook-central.herokuapp.com/images/bells-icon.png"
+            width="50px"
+            height="50px"
+          />
         </div>
       </div>
       <SeparateItemForm

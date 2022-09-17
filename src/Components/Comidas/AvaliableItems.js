@@ -1,8 +1,7 @@
+import { useEffect } from "react";
 import Card from "../UI/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./Item/SeparateItem";
-import styled from "styled-components";
-import fish_img1 from "../UI/images/NH-Icon-betta.webp";
 
 const items_stored = [
   [
@@ -282,16 +281,31 @@ const items_stored = [
 ];
 
 const AvaliableItems = (props) => {
+  let itemList = [];
   let itemIndex;
-  if (props.type === "Peixes") {
-    itemIndex = 0;
-  } else if (props.type === "Fossil") {
-    itemIndex = 2;
-  } else {
-    itemIndex = 1;
-  }
 
-  const avaliable_items = items_stored[itemIndex].map((item) => (
+  console.log(props.type);
+
+  const fetchItems = async () => {
+    const response = await fetch(`http://acnhapi.com/v1/fish`);
+    const data = await response.json();
+    const data_loop = [data];
+
+    itemList = data_loop.map((item) => {
+      return {
+        key: item.id,
+        name: "JOAO",
+        price: item.price,
+        image: item.icon_uri,
+      };
+    });
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const avaliable_items = itemList.map((item) => (
     <SeparateItem
       id={item.key}
       name={item.name}
