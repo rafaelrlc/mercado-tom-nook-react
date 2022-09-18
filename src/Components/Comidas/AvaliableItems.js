@@ -281,17 +281,13 @@ const items_stored = [
 ];
 
 const AvaliableItems = (props) => {
-  let itemList = [];
-  let itemIndex;
-
+  let itemList;
   console.log(props.type);
 
   const fetchItems = async () => {
-    const response = await fetch(`http://acnhapi.com/v1/fish`);
+    const response = await fetch(`http://acnhapi.com/v1/${props.type}`);
     const data = await response.json();
-    const data_loop = [data];
-
-    itemList = data_loop.map((item) => {
+    itemList = data.map((item) => {
       return {
         key: item.id,
         name: "JOAO",
@@ -305,7 +301,7 @@ const AvaliableItems = (props) => {
     fetchItems();
   }, []);
 
-  const avaliable_items = itemList.map((item) => (
+  const avaliable_items = items_stored[0].map((item) => (
     <SeparateItem
       id={item.key}
       name={item.name}

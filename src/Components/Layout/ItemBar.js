@@ -29,9 +29,17 @@ const Banner = styled.div`
 `;
 
 const ItemBar = (props) => {
+  let itemShow;
+  if (props.type === "fish") {
+    itemShow = "Peixes";
+  } else if (props.type === "bugs") {
+    itemShow = "Bugs";
+  } else if (props.type === "fossils") {
+    itemShow = "Fossils";
+  }
   return (
     <Banner>
-      <h3>{props.type}</h3>
+      <h3>{itemShow}</h3>
     </Banner>
   );
 };

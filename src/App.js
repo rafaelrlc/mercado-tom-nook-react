@@ -21,6 +21,7 @@ function App() {
     setItemBarType(type);
   };
 
+  // criar um context no lugar da main para colocar as funcoes de cadeia de prop ==> const expandItemInfo = () => {};
   return (
     <CartProvider>
       {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}

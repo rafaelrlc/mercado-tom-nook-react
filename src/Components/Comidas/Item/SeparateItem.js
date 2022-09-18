@@ -14,7 +14,7 @@ const SeparateItem = (props) => {
     });
   };
   return (
-    <li className={classes.item}>
+    <li className={classes.item} onClick={}>
       <div className={classes.info}>
         <div className={classes.item_info}>
           <img src={props.image} width="50px" height="50px" />
