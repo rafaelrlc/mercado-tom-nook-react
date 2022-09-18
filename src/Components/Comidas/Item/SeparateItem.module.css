@@ -34,11 +34,6 @@
   margin: 0 0 0.25rem 0;
 }
 
-.description {
-  font-weight: 100;
-  color: black;
-}
-
 .price {
   display: flex;
   font-weight: bold;
@@ -49,4 +44,8 @@
 }
 .price img {
   margin-bottom: 3px;
+}
+
+.description {
+  color: rgb(51, 43, 36);
 }

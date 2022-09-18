@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemForm";
 import CartContext from "../../../store/cart-context";
+import styled from "styled-components";
+
 const SeparateItem = (props) => {
+  const [expandItem, setExpandItem] = useState(false);
   const cartCtx = useContext(CartContext);
   const addToCart = (itemAmount) => {
     cartCtx.addItem({
@@ -13,15 +16,17 @@ const SeparateItem = (props) => {
       image: props.image,
     });
   };
+
+  const expandDetails = () => {
+    setExpandItem((state) => !state);
+  };
   return (
-    <li className={classes.item} onClick={}>
+    <li className={classes.item} onClick={expandDetails}>
       <div className={classes.info}>
         <div className={classes.item_info}>
           <img src={props.image} width="50px" height="50px" />
           <h3>{props.name}</h3>
-          <div className={classes.description}></div>
         </div>
-
         <div className={classes.price}>
           <span>{props.price}</span>
           <img
@@ -35,6 +40,9 @@ const SeparateItem = (props) => {
         item={props.item}
         onAddToCart={addToCart}
       ></SeparateItemForm>
+      {expandItem && (
+        <div className={classes.description}>{props.description}</div>
+      )}
     </li>
   );
 };
