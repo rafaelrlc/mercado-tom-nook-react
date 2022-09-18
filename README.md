@@ -4,6 +4,7 @@
 * Adicionar imagem a cada item no seu respectivo objeto. ✅
 * Arrumar botão de mais e menos no carrinho. ✅
 * Adicionar barra com outras opções de itens. (ex: crafts e villagers) ✅
+* Adicionar API REQUEST dos dados. ✅
 * Arrumar responsividade. 
 * Implementar Back-end com Firebase.
 * Adicionar mais animações com CSS ao site.
