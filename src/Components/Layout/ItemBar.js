@@ -34,8 +34,8 @@ const ItemBar = (props) => {
     itemShow = "Peixes";
   } else if (props.type === "bugs") {
     itemShow = "Bugs";
-  } else if (props.type === "fossils") {
-    itemShow = "Fossils";
+  } else if (props.type === "sea") {
+    itemShow = "Mar";
   }
   return (
     <Banner>

@@ -10,6 +10,7 @@
   font-size: 1.2rem;
   background-color: #f2eded;
 }
+
 .info {
   display: flex;
   gap: 1rem;
@@ -18,7 +19,7 @@
 }
 .item:hover {
   background-color: #eaeae6;
-  margin-top: 1.25rem;
+  margin-top: 1.2rem;
 }
 
 .item_info {
@@ -32,6 +33,10 @@
 
 .item h3 {
   margin: 0 0 0.25rem 0;
+}
+.item h3:hover {
+  color: #944a05;
+  cursor: pointer;
 }
 
 .price {
@@ -47,5 +52,18 @@
 }
 
 .description {
+  animation: items-down 0.5s linear;
   color: rgb(51, 43, 36);
+}
+
+@keyframes items-down {
+  from {
+    opacity: 0.2;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

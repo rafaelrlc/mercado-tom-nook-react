@@ -8,6 +8,9 @@ const AvaliableItems = (props) => {
   let itemObject = {};
   let itemList = [];
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   const fetchItems = async () => {
     const response = await fetch(`http://acnhapi.com/v1/${props.type}`);
     const data = await response.json();
@@ -17,7 +20,7 @@ const AvaliableItems = (props) => {
         itemObject = {
           id: data[item]["id"],
           price: data[item]["price"],
-          name: data[item]["name"]["name-USen"].toUpperCase(),
+          name: capitalizeFirstLetter(data[item]["name"]["name-USen"]),
           description: data[item]["museum-phrase"],
           image: data[item]["icon_uri"],
         };

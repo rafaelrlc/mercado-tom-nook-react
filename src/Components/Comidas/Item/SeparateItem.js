@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemForm";
 import CartContext from "../../../store/cart-context";
-import styled from "styled-components";
 
 const SeparateItem = (props) => {
   const [expandItem, setExpandItem] = useState(false);
@@ -17,15 +16,12 @@ const SeparateItem = (props) => {
     });
   };
 
-  const expandDetails = () => {
-    setExpandItem((state) => !state);
-  };
   return (
-    <li className={classes.item} onClick={expandDetails}>
+    <li className={classes.item}>
       <div className={classes.info}>
         <div className={classes.item_info}>
           <img src={props.image} width="50px" height="50px" />
-          <h3>{props.name}</h3>
+          <h3 onClick={() => setExpandItem(!expandItem)}>{props.name}</h3>
         </div>
         <div className={classes.price}>
           <span>{props.price}</span>
@@ -40,6 +36,7 @@ const SeparateItem = (props) => {
         item={props.item}
         onAddToCart={addToCart}
       ></SeparateItemForm>
+
       {expandItem && (
         <div className={classes.description}>{props.description}</div>
       )}

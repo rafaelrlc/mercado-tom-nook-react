@@ -88,7 +88,6 @@ const StyledCartButton = styled.button`
 
 const CartButton = (props) => {
   const cartCtx = useContext(CartContext);
-  const [counter, setcounter] = useState(0);
 
   const numCartItens1 = cartCtx.itemsStored.reduce((accumulator, object) => {
     return accumulator + object.amount;
