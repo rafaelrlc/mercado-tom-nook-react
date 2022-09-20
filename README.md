@@ -1,9 +1,11 @@
 
 
 ### TASKS:
-* Arrumar responsividade. 
+* Adicionar outras funcionalidades para items outros tipos de items.
+* Criar outras pages com Routes.
 * Implementar Back-end com Firebase.
 * Adicionar mais animações com CSS ao site.
+* Arrumar responsividade. 
 
 
 ### `npm start`
