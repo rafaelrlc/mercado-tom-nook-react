@@ -1,4 +1,4 @@
-(ainda falta bastante coisa a ser implementada).
+
 
 ### TASKS:
 * Arrumar responsividade. 
