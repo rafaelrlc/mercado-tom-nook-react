@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
+  @font-face {
+    font-family: "FinkHeavy";
+    src: url("../UI/FinkHeavy.ttf");
+  }
   cursor: pointer;
   font: inherit;
   margin: 0;
@@ -11,6 +15,7 @@ const StyledButton = styled.button`
   bottom: 0;
   margin-bottom: 5px;
   padding: 0.25rem 1.25rem;
+  font-family: "FinkHeavy";
   border-radius: 1.5rem;
   box-shadow: 0 5px 0px #d1a788;
   border: 2px solid #c59d81;

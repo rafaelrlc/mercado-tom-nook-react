@@ -43,7 +43,7 @@ const SellingOpitions = (props) => {
     <StyledItemBar>
       <div>
         <Button value="Peixes" onClick={changeItemFish}>
-          PEIXES
+          Peixes
         </Button>
       </div>
       <div>
@@ -53,7 +53,7 @@ const SellingOpitions = (props) => {
       </div>
       <div>
         <Button value="Bugs" onClick={changeItemBugs}>
-          BUGS
+          Bugs
         </Button>
       </div>
     </StyledItemBar>
