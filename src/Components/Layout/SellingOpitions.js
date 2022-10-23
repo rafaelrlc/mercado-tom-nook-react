@@ -25,6 +25,7 @@ const StyledItemBar = styled.div`
 `;
 const SellingOpitions = (props) => {
   let type;
+
   const changeItemFish = () => {
     type = "fish";
     props.changeItemType(type);

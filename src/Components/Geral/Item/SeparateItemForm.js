@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import CartContext from "../../../store/cart-context";
 import "./SeparateItemForm.css";
 
 const StyledItemForm = styled.form`

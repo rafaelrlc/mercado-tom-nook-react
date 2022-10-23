@@ -1,5 +1,5 @@
 import MainHeader from "./Components/Layout/MainHeader";
-import Items from "./Components/Comidas/Items";
+import Items from "./Components/Geral/Items";
 import { Fragment, useEffect, useState } from "react";
 import Cart from "./Components/Cart/Cart";
 import ItemBar from "./Components/Layout/ItemBar";
@@ -45,17 +45,14 @@ function App() {
       ></MainHeader>
       {sellingItems && !villagers && (
         <div className="item_store">
-          <SellingOpitions
-            itemType={itemBarType}
-            changeItemType={changeItem}
-          ></SellingOpitions>
-
+          <SellingOpitions changeItemType={changeItem}></SellingOpitions>
           <main>
             <ItemBar type={itemBarType}></ItemBar>
             <Items type={itemBarType}></Items>
           </main>
         </div>
       )}
+      {!sellingItems && villagers && <div>TESTE</div>}
     </CartProvider>
   );
 }
