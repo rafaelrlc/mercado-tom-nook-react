@@ -62,6 +62,7 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   } else {
+    //clear cart
     state.items = [];
     state.totalAmount = 0;
 
@@ -96,8 +97,8 @@ const CartProvider = (props) => {
   };
 
   const cartContext = {
-    itemsStored: cartState.items,
-    totalAmount: cartState.totalAmount,
+    itemsStored: cartState.items, // puxou do CONTEXT
+    totalAmount: cartState.totalAmount, // puxou do CONTEXT
     addItem: addItem,
     removeItem: removeItem,
     clearCartItem: clearCartItem,

@@ -31,10 +31,10 @@
   src: url("../../UI/fonts/FOT-Rodin Pro UB.otf");
 }
 
-.item h3 {
+.item_info h3 {
   margin: 0 0 0.25rem 0.25rem;
 }
-.item h3:hover {
+.item_info h3:hover {
   color: #944a05;
   cursor: pointer;
 }
@@ -54,6 +54,14 @@
 .description {
   animation: items-down 0.5s linear;
   color: rgb(51, 43, 36);
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-shadow: 5px 5px #adadac;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: #f2eded;
 }
 
 @keyframes items-down {

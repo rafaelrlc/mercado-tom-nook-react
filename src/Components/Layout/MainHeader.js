@@ -56,7 +56,7 @@ const MainHeader = (props) => {
       <StyledHeader>
         <img src={tom_nook_nav} width="80px" height="80px" />
         <h1>Mercadinho Tom Nook</h1>
-        <Button onClick={props.onSellingItems}>Items</Button>
+        <Button onClick={props.onSellingItems}>Items de Museu</Button>
         <Button onClick={props.onVillagers}>Villagers</Button>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
