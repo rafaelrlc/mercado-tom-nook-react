@@ -30,7 +30,8 @@ const cartReducer = (state, action) => {
       updatedItem = {
         ...repeatedCartItem,
         amount: repeatedCartItem.amount + action.item.amount,
-      };
+      }; // reescreve o repeatedCartItem apenas mudando seu amount
+
       updatedItems = state.items;
       updatedItems[repeatedItemIndex] = updatedItem;
     } else {

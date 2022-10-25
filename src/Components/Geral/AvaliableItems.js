@@ -14,18 +14,17 @@ const AvaliableItems = (props) => {
   const fetchItems = async () => {
     const response = await fetch(`http://acnhapi.com/v1/${props.type}`);
     const data = await response.json();
+    console.log(data);
 
     for (var item in data) {
-      if (data.hasOwnProperty(item)) {
-        itemObject = {
-          id: data[item]["id"],
-          price: data[item]["price"],
-          name: capitalizeFirstLetter(data[item]["name"]["name-USen"]),
-          description: data[item]["museum-phrase"],
-          image: data[item]["icon_uri"],
-        };
-        itemList.push(itemObject);
-      }
+      itemObject = {
+        id: data[item]["id"],
+        price: data[item]["price"],
+        name: capitalizeFirstLetter(data[item]["name"]["name-USen"]),
+        description: data[item]["museum-phrase"],
+        image: data[item]["icon_uri"],
+      };
+      itemList.push(itemObject);
     }
     setListItems(itemList);
   };
