@@ -3,7 +3,8 @@
 ### TASKS:
 * Adicionar outras funcionalidades para items outros tipos de items.
 * Criar outras pages com Routes.
-* Implementar Back-end com Firebase.
+* Implementar Back-end com Firebase e sistema earn coins.
+* Implementar um sistema de inventário para cada usuário cadastrado.
 * Adicionar mais animações com CSS ao site.
 * Arrumar responsividade. 
 
