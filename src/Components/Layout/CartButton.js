@@ -1,8 +1,7 @@
 import CartIcon from "./CardIcon";
 import styled from "styled-components";
 import CartContext from "../../store/cart-context";
-import React, { useContext, useState } from "react";
-
+import React, { useContext } from "react";
 const StyledCartButton = styled.button`
   cursor: pointer;
   font: inherit;

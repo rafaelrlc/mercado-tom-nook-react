@@ -12,7 +12,7 @@ const AvaliableItems = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
   const fetchItems = async () => {
-    const response = await fetch(`http://acnhapi.com/v1/${props.type}`);
+    const response = await fetch(`https://acnhapi.com/v1/${props.type}`);
     const data = await response.json();
     console.log(data);
 
