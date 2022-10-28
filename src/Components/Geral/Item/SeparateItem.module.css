@@ -48,12 +48,12 @@ ul {
   display: flex;
   font-weight: bold;
   color: #ad5502;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   align-items: center;
   gap: 0.25rem;
 }
 .price img {
-  margin-bottom: 3px;
+  margin-bottom: 0px;
 }
 
 .description {

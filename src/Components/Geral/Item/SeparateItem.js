@@ -28,9 +28,9 @@ const SeparateItem = (props) => {
           <div className={classes.price}>
             <span>{props.price}</span>
             <img
-              src="https://nook-central.herokuapp.com/images/bells-icon.png"
-              width="50px"
-              height="50px"
+              src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
+              width="45px"
+              height="px"
             />
           </div>
         </div>

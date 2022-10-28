@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #317a7e;
+  border-bottom: 2px solid #29696c;
   padding: 1rem 0;
   margin: 1rem 0;
 }
@@ -31,7 +31,7 @@
 }
 
 .summary_price img {
-  margin-bottom: 3px;
+  margin-top: 2px;
 }
 .price {
   font-weight: bold;

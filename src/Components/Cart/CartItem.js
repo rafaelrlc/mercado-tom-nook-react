@@ -14,9 +14,9 @@ const CartItem = (props) => {
             <span className={classes.price}>{props.price}</span>
 
             <img
-              src="https://nook-central.herokuapp.com/images/bells-icon.png"
-              width="35px"
-              height="35px"
+              src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
+              width="40px"
+              height="40px"
             />
           </div>
 
