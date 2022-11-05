@@ -1,6 +1,6 @@
-import CartIcon from "./CardIcon";
+import CartIcon from "./CartIcon";
 import styled from "styled-components";
-import CartContext from "../../store/cart-context";
+import CartContext from "../../../store/cart-context";
 import React, { useContext } from "react";
 const StyledCartButton = styled.button`
   cursor: pointer;

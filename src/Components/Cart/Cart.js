@@ -55,6 +55,7 @@ const Cart = (props) => {
             src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
             width="50px"
             height="50px"
+            alt="item"
           />
         </div>
       </div>

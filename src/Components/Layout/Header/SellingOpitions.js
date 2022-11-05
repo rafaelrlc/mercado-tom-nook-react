@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../UI/Button";
+import Button from "../../UI/Button";
 
 const StyledItemBar = styled.div`
   @font-face {
@@ -23,6 +23,7 @@ const StyledItemBar = styled.div`
   z-index: 10;
   list-style-type: none;
 `;
+
 const SellingOpitions = (props) => {
   let type;
 
@@ -44,17 +45,17 @@ const SellingOpitions = (props) => {
     <StyledItemBar>
       <div>
         <Button value="Peixes" onClick={changeItemFish}>
-          Peixes
+          PEIXES
         </Button>
       </div>
       <div>
         <Button value="Sea" onClick={changeItemSea}>
-          Mar
+          MAR
         </Button>
       </div>
       <div>
         <Button value="Bugs" onClick={changeItemBugs}>
-          Bugs
+          INSETOS
         </Button>
       </div>
     </StyledItemBar>

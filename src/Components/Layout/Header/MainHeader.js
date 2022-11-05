@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { Fragment } from "react";
-import CartButton from "./CartButton";
-import Button from "../UI/Button";
+import CartButton from "../Cart/CartButton";
 
-import tom_nook_nav from "../UI/images/kindpng_6766832.png";
+import tom_nook_nav from "../../UI/images/kindpng_6766832.png";
 
 const StyledHeader = styled.header`
   @font-face {
@@ -54,10 +53,12 @@ const MainHeader = (props) => {
   return (
     <Fragment>
       <StyledHeader>
-        <img src={tom_nook_nav} width="80px" height="80px" />
+        <img src={tom_nook_nav} width="80px" height="80px" alt="tom-nook-img" />
         <h1>Mercadinho Tom Nook</h1>
-        <Button onClick={props.onSellingItems}>Items de Museu</Button>
-        <Button onClick={props.onVillagers}>Villagers</Button>
+
+        {/*<Button onClick={props.onSellingItems}>Items de Museu</Button>
+        <Button onClick={props.onVillagers}>Villagers</Button>*/}
+
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
     </Fragment>

@@ -1,10 +1,10 @@
-import MainHeader from "./Components/Layout/MainHeader";
-import Items from "./Components/Geral/Items";
-import { Fragment, useEffect, useState } from "react";
+import MainHeader from "./Components/Layout/Header/MainHeader";
+import Items from "./Components/Items/Items";
+import { useState } from "react";
 import Cart from "./Components/Cart/Cart";
-import ItemBar from "./Components/Layout/ItemBar";
+import ItemBar from "./Components/Layout/Header/ItemBar";
 import CartProvider from "./store/CartProvider";
-import SellingOpitions from "./Components/Layout/SellingOpitions";
+import SellingOpitions from "./Components/Layout/Header/SellingOpitions";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
