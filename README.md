@@ -5,6 +5,7 @@
 * Criar outras pages com Routes.
 * Implementar Back-end com Firebase e sistema earn coins.
 * Implementar um sistema de inventário para cada usuário cadastrado.
+* Implementar Routes.
 * Adicionar mais animações com CSS ao site.
 * Arrumar responsividade. 
 
