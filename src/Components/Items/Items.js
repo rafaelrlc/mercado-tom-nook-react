@@ -1,8 +1,10 @@
 import React from "react";
-import AvaliableItems from "./AvaliableItems";
+import AvaliableItems from "./Item/AvaliableItems";
+import { useParams } from "react-router-dom";
 
 const Items = (props) => {
-  return <AvaliableItems type={props.type}></AvaliableItems>;
+  const params = useParams();
+  return <AvaliableItems type={params.itemType}></AvaliableItems>;
 };
 
 export default Items;

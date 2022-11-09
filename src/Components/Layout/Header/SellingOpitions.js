@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../UI/Button";
-
+import { useNavigate } from "react-router-dom";
 const StyledItemBar = styled.div`
   @font-face {
     font-family: "FinkHeavy";
@@ -25,21 +25,19 @@ const StyledItemBar = styled.div`
 `;
 
 const SellingOpitions = (props) => {
+  const navigate = useNavigate();
   let type;
 
   const changeItemFish = () => {
-    type = "fish";
-    props.changeItemType(type);
+    navigate("/items/fish");
   };
 
   const changeItemSea = () => {
-    type = "sea";
-    props.changeItemType(type);
+    navigate("/items/sea");
   };
 
   const changeItemBugs = () => {
-    type = "bugs";
-    props.changeItemType(type);
+    navigate("/items/bugs");
   };
   return (
     <StyledItemBar>

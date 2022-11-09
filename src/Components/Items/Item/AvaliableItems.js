@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Card from "../UI/Card";
+import Card from "../../UI/Card";
 import classes from "./AvaliableItems.module.css";
-import SeparateItem from "./Item/SeparateItem";
+import SeparateItem from "./SeparateItem";
 
 const AvaliableItems = (props) => {
   const [listItems, setListItems] = useState([]);

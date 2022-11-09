@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import "./SeparateItemForm.css";
+
+import classes from "./SeparateItemForm.module.css";
 
 const StyledItemForm = styled.form`
   display: flex;
@@ -81,7 +82,7 @@ const SeparateItemForm = (props) => {
   const clearInvalid = () => {};
 
   return (
-    <form className="item-form-wrapper" onSubmit={submitHandler}>
+    <form className={classes.item_form_wrapper} onSubmit={submitHandler}>
       <StyledItemForm>
         <label htmlFor="item-quantitye">Qtd:</label>
         <input

@@ -5,6 +5,7 @@ import CartContext from "../../../store/cart-context";
 
 const SeparateItem = (props) => {
   const [expandItem, setExpandItem] = useState(false);
+
   const [error, setError] = useState("");
   const cartCtx = useContext(CartContext);
 
@@ -55,10 +56,7 @@ const SeparateItem = (props) => {
             />
           </div>
         </div>
-        <SeparateItemForm
-          item={props.item}
-          onAddToCart={addToCart}
-        ></SeparateItemForm>
+        <SeparateItemForm onAddToCart={addToCart}></SeparateItemForm>
       </li>
       {expandItem && (
         <div className={classes.description}>{props.description}</div>

@@ -1,3 +1,4 @@
+import { Routes, Route, Navigate } from "react-router-dom";
 import MainHeader from "./Components/Layout/Header/MainHeader";
 import Items from "./Components/Items/Items";
 import { useState } from "react";
@@ -5,6 +6,7 @@ import Cart from "./Components/Cart/Cart";
 import ItemBar from "./Components/Layout/Header/ItemBar";
 import CartProvider from "./store/CartProvider";
 import SellingOpitions from "./Components/Layout/Header/SellingOpitions";
+import Homepage from "./pages/homepage";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
@@ -20,39 +22,30 @@ function App() {
     setCartShow(false);
   };
 
-  const changeItem = (type) => {
-    setItemBarType(type);
-  };
-
-  const changeVillagers = () => {
-    setSellingItems(false);
-    setVillagers(true);
-  };
-
-  const changeSellingItems = () => {
-    setSellingItems(true);
-    setVillagers(false);
-  };
-
-  // criar um context no lugar da main para colocar as funcoes de cadeia de prop ==> const expandItemInfo = () => {};
   return (
     <CartProvider>
-      {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
-      <MainHeader
-        onShowCart={showCartHandler}
-        onVillagers={changeVillagers}
-        onSellingItems={changeSellingItems}
-      ></MainHeader>
-      {sellingItems && !villagers && (
-        <div className="item_store">
-          <SellingOpitions changeItemType={changeItem}></SellingOpitions>
-          <main>
-            <ItemBar type={itemBarType}></ItemBar>
-            <Items type={itemBarType}></Items>
-          </main>
-        </div>
-      )}
-      {!sellingItems && villagers && <div>TESTE</div>}
+      <header>
+        {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
+        <MainHeader onShowCart={showCartHandler}></MainHeader>
+      </header>
+
+      <Routes>
+        <Route path="/" element={<Navigate to={"/home"}></Navigate>}></Route>
+        <Route path="/home" element={<Homepage></Homepage>}></Route>
+        <Route
+          path={"/items/"}
+          element={
+            <main>
+              <SellingOpitions></SellingOpitions>
+              <ItemBar type={itemBarType}></ItemBar>
+            </main>
+          }
+        ></Route>
+        <Route
+          path={`/items/:itemType`}
+          element={<Items type={itemBarType}></Items>}
+        ></Route>
+      </Routes>
     </CartProvider>
   );
 }
