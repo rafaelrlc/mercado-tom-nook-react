@@ -23,7 +23,6 @@ const AvaliableItems = (props) => {
         throw new Error("Request failed!");
       }
       const data = await response.json();
-      console.log(data);
 
       for (var item in data) {
         itemObject = {
@@ -44,12 +43,12 @@ const AvaliableItems = (props) => {
   };
 
   useEffect(() => {
-    console.log("useffect");
     fetchItems();
   }, [props.type]);
 
   const avaliable_items = listItems.map((item) => (
     <SeparateItem
+      key={item.id}
       id={item.id}
       name={item.name}
       price={item.price}

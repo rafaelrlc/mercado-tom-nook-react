@@ -1,18 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { Fragment, useState } from "react";
 import MainHeader from "./Components/Layout/Header/MainHeader";
-import Items from "./Components/Items/Items";
-import { useState } from "react";
 import Cart from "./Components/Cart/Cart";
-import ItemBar from "./Components/Layout/Header/ItemBar";
 import CartProvider from "./store/CartProvider";
-import SellingOpitions from "./Components/Layout/Header/SellingOpitions";
 import Homepage from "./pages/homepage";
+import ItemType from "./pages/selectItemType";
+import SpecificItem from "./pages/specificItem";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
-  const [itemBarType, setItemBarType] = useState("fish");
-  const [sellingItems, setSellingItems] = useState(true);
-  const [villagers, setVillagers] = useState(false);
+  const [itemBarType, setItemBarType] = useState("");
 
   const showCartHandler = () => {
     setCartShow(true);
@@ -22,31 +19,37 @@ function App() {
     setCartShow(false);
   };
 
-  return (
-    <CartProvider>
-      <header>
-        {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
-        <MainHeader onShowCart={showCartHandler}></MainHeader>
-      </header>
+  const changeItemType = (type) => {
+    setItemBarType(type);
+  };
 
-      <Routes>
-        <Route path="/" element={<Navigate to={"/home"}></Navigate>}></Route>
-        <Route path="/home" element={<Homepage></Homepage>}></Route>
-        <Route
-          path={"/items/"}
-          element={
-            <main>
-              <SellingOpitions></SellingOpitions>
-              <ItemBar type={itemBarType}></ItemBar>
-            </main>
-          }
-        ></Route>
-        <Route
-          path={`/items/:itemType`}
-          element={<Items type={itemBarType}></Items>}
-        ></Route>
-      </Routes>
-    </CartProvider>
+  return (
+    <Fragment>
+      <CartProvider>
+        <header>
+          {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
+          <MainHeader onShowCart={showCartHandler}></MainHeader>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Navigate to={"/home"}></Navigate>}></Route>
+          <Route path="/home" element={<Homepage></Homepage>}></Route>
+          <Route
+            path={"/items/"}
+            element={<ItemType changeItemType={changeItemType}></ItemType>}
+          ></Route>
+          <Route
+            path={`/items/:itemType`}
+            element={
+              <SpecificItem
+                changeItemType={changeItemType}
+                type={itemBarType}
+              ></SpecificItem>
+            }
+          ></Route>
+        </Routes>
+      </CartProvider>
+    </Fragment>
   );
 }
 

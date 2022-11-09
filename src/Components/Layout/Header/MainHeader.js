@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Fragment } from "react";
 import CartButton from "../Cart/CartButton";
+import { useNavigate } from "react-router-dom";
 
 import tom_nook_nav from "../../UI/images/kindpng_6766832.png";
 
@@ -26,6 +27,7 @@ const StyledHeader = styled.header`
 
   & img:hover {
     margin-top: 0.75rem;
+    cursor: pointer;
   }
   & h1 {
     margin: 0;
@@ -50,14 +52,22 @@ const StyledHeader = styled.header`
 `;
 
 const MainHeader = (props) => {
+  const navigate = useNavigate();
+  const goToHome = () => {
+    navigate("/home");
+  };
+
   return (
     <Fragment>
       <StyledHeader>
-        <img src={tom_nook_nav} width="80px" height="80px" alt="tom-nook-img" />
+        <img
+          src={tom_nook_nav}
+          width="80px"
+          height="80px"
+          alt="tom-nook-img"
+          onClick={goToHome}
+        />
         <h1>Mercadinho Tom Nook</h1>
-
-        {/*<Button onClick={props.onSellingItems}>Items de Museu</Button>
-        <Button onClick={props.onVillagers}>Villagers</Button>*/}
 
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>

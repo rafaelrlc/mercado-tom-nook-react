@@ -29,14 +29,17 @@ const SellingOpitions = (props) => {
   let type;
 
   const changeItemFish = () => {
+    props.changeItemType("fish");
     navigate("/items/fish");
   };
 
   const changeItemSea = () => {
+    props.changeItemType("sea");
     navigate("/items/sea");
   };
 
   const changeItemBugs = () => {
+    props.changeItemType("bugs");
     navigate("/items/bugs");
   };
   return (

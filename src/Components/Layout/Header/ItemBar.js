@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 const Banner = styled.div`
   @font-face {
@@ -29,6 +30,9 @@ const Banner = styled.div`
 `;
 
 const ItemBar = (props) => {
+  const params = useParams();
+  // pode usar o params para setar o itembar também
+
   let itemShow;
   if (props.type === "fish") {
     itemShow = "Peixes";
@@ -36,6 +40,8 @@ const ItemBar = (props) => {
     itemShow = "Insetos";
   } else if (props.type === "sea") {
     itemShow = "Mar";
+  } else {
+    itemShow = "Items";
   }
   return (
     <Banner>
