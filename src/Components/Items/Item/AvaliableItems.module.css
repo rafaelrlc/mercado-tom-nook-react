@@ -2,7 +2,7 @@
   width: 50%;
   margin: 2rem auto;
   animation: items-down 1s ease-out forwards;
-  background-color: #f4f0f0;
+  background-color: #ede4d8;
   padding: 0.75rem;
 }
 
@@ -15,7 +15,7 @@
 @keyframes items-down {
   from {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(1rem);
   }
 
   to {

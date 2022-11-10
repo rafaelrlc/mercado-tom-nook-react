@@ -16,7 +16,7 @@ const StyledItemForm = styled.form`
   & input {
     width: 3.5rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     font: inherit;
     padding-left: 0.35rem;
     margin: 0;
@@ -32,7 +32,7 @@ const AddButton = styled.button`
   box-shadow: 0 5.5px 0px #88bdbd;
   border: 2px solid #66b1d6;
   color: #0f4a61;
-  color: ${(props) => props.invalid_border};
+  color: ${(props) => props.invalid};
 
   transition: all 0.2 ease;
   top: 0;
@@ -60,7 +60,13 @@ const SeparateItemForm = (props) => {
   const [amountIsValid, setAmountValidity] = useState(true);
 
   const inputAmount = useRef();
-
+  const checkValidity = () => {
+    if (inputAmount.current.value <= 0) {
+      setAmountValidity(false);
+    } else {
+      setAmountValidity(true);
+    }
+  };
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = inputAmount.current.value;
@@ -79,29 +85,29 @@ const SeparateItemForm = (props) => {
     props.onAddToCart(enteredAmountNum);
   };
 
-  const clearInvalid = () => {};
-
   return (
     <form className={classes.item_form_wrapper} onSubmit={submitHandler}>
       <StyledItemForm>
         <label htmlFor="item-quantitye">Qtd:</label>
         <input
           type="number"
+          invalid={!amountIsValid ? "red" : "#ffffff"}
           min="1"
           max="5"
           step="1"
           id="item-quantity"
           defaultValue="1"
           ref={inputAmount}
+          onChange={checkValidity}
         />
       </StyledItemForm>
       <div></div>
       <AddButton
         type="submit"
-        invalid_border={!amountIsValid ? "red" : "#0f4a61"}
+        invalid={!amountIsValid ? "red" : "#0f4a61"}
         shadow={!amountIsValid ? "0 5px 0px #7cadad" : "none"}
         margintop={!amountIsValid ? "0" : "0.4rem"}
-        onBlur={clearInvalid}
+        disabled={!amountIsValid}
       >
         ADD
       </AddButton>

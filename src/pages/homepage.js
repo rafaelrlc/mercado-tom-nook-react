@@ -5,7 +5,11 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30rem;
+  height: 40rem;
+
+  &:hover {
+    transition: all 0.5 ease;
+  }
 `;
 
 const Homepage = () => {
@@ -16,6 +20,7 @@ const Homepage = () => {
         onClick={() => {
           navigate("/items");
         }}
+        className="bigger"
       >
         GO TO ITEMS
       </Button>

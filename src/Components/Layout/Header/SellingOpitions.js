@@ -42,22 +42,17 @@ const SellingOpitions = (props) => {
     props.changeItemType("bugs");
     navigate("/items/bugs");
   };
+
   return (
     <StyledItemBar>
       <div>
-        <Button value="Peixes" onClick={changeItemFish}>
-          PEIXES
-        </Button>
+        <Button onClick={changeItemFish}>PEIXES</Button>
       </div>
       <div>
-        <Button value="Sea" onClick={changeItemSea}>
-          MAR
-        </Button>
+        <Button onClick={changeItemSea}>MAR</Button>
       </div>
       <div>
-        <Button value="Bugs" onClick={changeItemBugs}>
-          INSETOS
-        </Button>
+        <Button onClick={changeItemBugs}>INSETOS</Button>
       </div>
     </StyledItemBar>
   );

@@ -5,10 +5,10 @@
   padding-bottom: 1rem;
   border-radius: 1.5rem;
   padding: 1rem;
-  box-shadow: 5px 5px #adadac;
+  box-shadow: 5px 5px #c0c0be;
   align-items: center;
   font-size: 1.23rem;
-  background-color: #f2eded;
+  background-color: #ebe1d3;
 }
 ul {
   -webkit-column-count: 1;
@@ -23,7 +23,7 @@ ul {
   justify-content: space-between;
 }
 .item:hover {
-  background-color: #eaeae6;
+  background-color: #e8ddd1;
   margin-top: 1.2rem;
 }
 
@@ -64,10 +64,10 @@ ul {
   padding-bottom: 1rem;
   border-radius: 1.5rem;
   padding: 1rem;
-  box-shadow: 5px 5px #adadac;
+
   align-items: center;
   font-size: 1.2rem;
-  background-color: #f2eded;
+  background-color: #e8ded0;
 }
 @keyframes items-down {
   from {

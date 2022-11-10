@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import ItemBar from "../Components/Layout/Header/ItemBar";
 import styled from "styled-components";
@@ -19,47 +19,49 @@ const Item = styled.div`
 
   text-align: center;
   color: rgb(75, 56, 8);
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 3rem;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-family: "FinkHeavy";
 
   &:hover {
-    background-color: #eeeee4;
+    background-color: #f1f1e9;
+    cursor: pointer;
   }
 `;
 
 const ItemType = (props) => {
   const navigate = useNavigate();
-
-  const redirectToFish = () => {
-    props.changeItemType("fish");
-    navigate("/items/fish");
-  };
-  const redirectToBugs = () => {
-    props.changeItemType("bugs");
-    navigate("/items/bugs");
-  };
-  const redirectToSea = () => {
-    props.changeItemType("sea");
-    navigate("/items/sea");
-  };
-
   return (
     <div>
       <ItemBar></ItemBar>
       <ItemContainer>
-        <Item onClick={redirectToFish}>
+        <Item
+          onClick={() => {
+            props.changeItemType("fish");
+            navigate("/items/fish");
+          }}
+        >
           <img src="https://acnhapi.com/v1/icons/fish/6"></img>
           <p>Peixes</p>
         </Item>
 
-        <Item onClick={redirectToBugs}>
+        <Item
+          onClick={() => {
+            props.changeItemType("bugs");
+            navigate("/items/bugs");
+          }}
+        >
           <img src="https://acnhapi.com/v1/icons/bugs/9"></img>
-          <p>Bugs</p>
+          <p>Insetos</p>
         </Item>
 
-        <Item onClick={redirectToSea}>
+        <Item
+          onClick={() => {
+            props.changeItemType("sea");
+            navigate("/items/sea");
+          }}
+        >
           <img src="https://acnhapi.com/v1/icons/sea/8"></img>
           <p>Mar</p>
         </Item>

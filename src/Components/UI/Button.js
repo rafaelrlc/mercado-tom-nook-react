@@ -47,6 +47,17 @@ const StyledButton = styled.button`
   &:first-child {
     margin-left: 10rem;
   }
+
+  &.bigger {
+    padding: 3rem;
+    font-size: 2rem;
+    box-shadow: 0 10px 0px #d1a788;
+    border: 3px solid #c59d81;
+  }
+  &.bigger:active {
+    margin-top: 12px;
+    box-shadow: none;
+  }
 `;
 
 const Button = (props) => {

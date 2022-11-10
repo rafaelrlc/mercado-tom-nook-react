@@ -52,7 +52,7 @@ const Cart = (props) => {
         <div className={classes.item_price}>
           <span>{cartCtx.totalAmount}</span>
           <img
-            src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
+            src="https://dodo.ac/np/images/thumb/1/1e/99k_Bells_NH_Inv_Icon.png/120px-99k_Bells_NH_Inv_Icon.png"
             width="50px"
             height="50px"
             alt="item"
