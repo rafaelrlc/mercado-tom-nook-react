@@ -3,10 +3,6 @@ import styled from "styled-components";
 import Button from "../../UI/Button";
 import { useNavigate } from "react-router-dom";
 const StyledItemBar = styled.div`
-  @font-face {
-    font-family: "FinkHeavy";
-    src: url("../UI/FinkHeavy.ttf");
-  }
   top: 0;
   left: 0;
   width: 100%;
@@ -26,33 +22,38 @@ const StyledItemBar = styled.div`
 
 const SellingOpitions = (props) => {
   const navigate = useNavigate();
-  let type;
-
-  const changeItemFish = () => {
-    props.changeItemType("fish");
-    navigate("/items/fish");
-  };
-
-  const changeItemSea = () => {
-    props.changeItemType("sea");
-    navigate("/items/sea");
-  };
-
-  const changeItemBugs = () => {
-    props.changeItemType("bugs");
-    navigate("/items/bugs");
-  };
 
   return (
     <StyledItemBar>
       <div>
-        <Button onClick={changeItemFish}>PEIXES</Button>
+        <Button
+          onClick={() => {
+            props.changeItemType("fish");
+            navigate("/items/fish");
+          }}
+        >
+          PEIXES
+        </Button>
       </div>
       <div>
-        <Button onClick={changeItemSea}>MAR</Button>
+        <Button
+          onClick={() => {
+            props.changeItemType("sea");
+            navigate("/items/sea");
+          }}
+        >
+          MAR
+        </Button>
       </div>
       <div>
-        <Button onClick={changeItemBugs}>INSETOS</Button>
+        <Button
+          onClick={() => {
+            props.changeItemType("bugs");
+            navigate("/items/bugs");
+          }}
+        >
+          INSETOS
+        </Button>
       </div>
     </StyledItemBar>
   );

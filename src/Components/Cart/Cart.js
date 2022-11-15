@@ -1,11 +1,14 @@
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
+import CheckoutCart from "./CheckoutCart";
+import ItemCartButton from "../UI/ItemCartButton";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  const [checkoutShow, setCheckoutShow] = useState(false);
 
   const showOrderButton = cartCtx.itemsStored.length > 0;
 
@@ -25,6 +28,10 @@ const Cart = (props) => {
   const clearCart = () => {
     cartCtx.clearCartItem();
   };
+
+  const goCheckout = () => {
+    setCheckoutShow(true);
+  };
   const cartItems = (
     <ul className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
@@ -42,7 +49,10 @@ const Cart = (props) => {
   );
   return (
     <Modal onClose={props.onHideCart}>
-      {cartItems}
+      {!checkoutShow && cartItems}
+      {checkoutShow && (
+        <CheckoutCart onCancel={() => setCheckoutShow(false)}></CheckoutCart>
+      )}
       <div className={classes.total}>
         {!showOrderButton ? (
           <span>Carrinho Vazio</span>
@@ -59,17 +69,24 @@ const Cart = (props) => {
           />
         </div>
       </div>
-      <div className={classes.actions}>
-        {showOrderButton && (
-          <button onClick={clearCart} className={classes.close}>
-            Limpar Carrinho
-          </button>
-        )}
-        <button onClick={props.onHideCart} className={classes.close}>
-          Fechar
-        </button>
-        {showOrderButton && <button className={classes.button}>Comprar</button>}
-      </div>
+
+      {!checkoutShow && (
+        <div className={classes.actions}>
+          {showOrderButton && (
+            <ItemCartButton onClick={clearCart} className="close">
+              Limpar Carrinho
+            </ItemCartButton>
+          )}
+          <ItemCartButton onClick={props.onHideCart} className="close">
+            Fechar
+          </ItemCartButton>
+          {showOrderButton && (
+            <ItemCartButton onClick={goCheckout} className="confirm">
+              Comprar
+            </ItemCartButton>
+          )}
+        </div>
+      )}
     </Modal>
   );
 };

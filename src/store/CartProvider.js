@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import CartContext from "./cart-context";
 
-const findIndexOf = (array, value) => {
+const findIndex = (array, value) => {
   for (let i = 0; i < array.length; i++) {
     if (array[i].id === value) {
       return i;
@@ -19,7 +19,7 @@ const cartReducer = (state, action) => {
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
 
-    const repeatedItemIndex = findIndexOf(state.items, action.item.id);
+    const repeatedItemIndex = findIndex(state.items, action.item.id);
 
     const repeatedCartItem = state.items[repeatedItemIndex];
 
@@ -42,7 +42,7 @@ const cartReducer = (state, action) => {
       totalAmount: updatedTotalAmount,
     };
   } else if (action.type === "REMOVE_ITEM") {
-    const removeIndex = findIndexOf(state.items, action.id);
+    const removeIndex = findIndex(state.items, action.id);
 
     const updatedTotalAmount =
       state.totalAmount - state.items[removeIndex].price;

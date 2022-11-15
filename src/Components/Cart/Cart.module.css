@@ -23,39 +23,6 @@
   margin-bottom: 0px;
 }
 
-.actions .close {
-  color: #000000;
-  background-color: #ffffff;
-  box-shadow: 0 5px 0px #8ab3b3;
-  transition: all 0.2 ease;
-}
-
-.actions .button {
-  color: rgb(255, 255, 255);
-  background-color: #a1d8da;
-  box-shadow: 0 5px 0px #8ab3b3;
-  transition: all 0.2 ease;
-}
-
 .actions {
   text-align: right;
-}
-
-.actions button {
-  font: inherit;
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid #45a2d1;
-  padding: 0.5rem 2rem;
-  border-radius: 25px;
-  margin-left: 1rem;
-}
-
-.actions button:hover {
-  background-color: #8bc2c4;
-  color: white;
-}
-.actions button:active {
-  box-shadow: none;
-  margin-top: 2px;
 }

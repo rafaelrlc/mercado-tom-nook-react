@@ -6,11 +6,6 @@ import { useNavigate } from "react-router-dom";
 import tom_nook_nav from "../../UI/images/kindpng_6766832.png";
 
 const StyledHeader = styled.header`
-  @font-face {
-    font-family: "FinkHeavy";
-    src: url("../UI/FinkHeavy.ttf");
-  }
-
   top: 0;
   left: 0;
   width: 100%;
@@ -53,9 +48,6 @@ const StyledHeader = styled.header`
 
 const MainHeader = (props) => {
   const navigate = useNavigate();
-  const goToHome = () => {
-    navigate("/home");
-  };
 
   return (
     <Fragment>
@@ -65,10 +57,9 @@ const MainHeader = (props) => {
           width="80px"
           height="80px"
           alt="tom-nook-img"
-          onClick={goToHome}
+          onClick={() => navigate("/home")}
         />
         <h1>Mercadinho Tom Nook</h1>
-
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
     </Fragment>

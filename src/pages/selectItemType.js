@@ -1,8 +1,8 @@
-import { useNavigate, Link } from "react-router-dom";
-
+import { useNavigate, useSearchParams } from "react-router-dom";
 import ItemBar from "../Components/Layout/Header/ItemBar";
 import styled from "styled-components";
-
+import Button from "../Components/UI/Button";
+import { useState, useEffect } from "react";
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -12,60 +12,58 @@ const ItemContainer = styled.div`
 `;
 
 const Item = styled.div`
-  @font-face {
-    font-family: "FinkHeavy";
-    src: url("../Components/UI/fonts/FinkHeavy.ttf");
-  }
-
   text-align: center;
   color: rgb(75, 56, 8);
   border-radius: 30px;
   padding: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-family: "FinkHeavy";
 
   &:hover {
-    background-color: #f1f1e9;
+    background-color: #f2e0cc;
     cursor: pointer;
   }
 `;
 
+const listItems = [
+  {
+    name: "PEIXES",
+    type: "fish",
+    image: "https://acnhapi.com/v1/icons/fish/6",
+  },
+  {
+    name: "INSETOS",
+    type: "bugs",
+    image: "https://acnhapi.com/v1/icons/bugs/9",
+  },
+  {
+    name: "MAR",
+    type: "sea",
+    image: "https://acnhapi.com/v1/icons/sea/8",
+  },
+]; // colocar uma chamada API para pegar esses dados (futuramente)
+
 const ItemType = (props) => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [listItem, setListItems] = useState([]);
+
+  const itemsDisplay = listItems.map((item) => (
+    <Item
+      onClick={() => {
+        props.changeItemType(item.type);
+        navigate(`/items/${item.type}`);
+      }}
+    >
+      <img src={item.image}></img>
+      <p>{item.name}</p>
+    </Item>
+  ));
   return (
     <div>
       <ItemBar></ItemBar>
-      <ItemContainer>
-        <Item
-          onClick={() => {
-            props.changeItemType("fish");
-            navigate("/items/fish");
-          }}
-        >
-          <img src="https://acnhapi.com/v1/icons/fish/6"></img>
-          <p>Peixes</p>
-        </Item>
-
-        <Item
-          onClick={() => {
-            props.changeItemType("bugs");
-            navigate("/items/bugs");
-          }}
-        >
-          <img src="https://acnhapi.com/v1/icons/bugs/9"></img>
-          <p>Insetos</p>
-        </Item>
-
-        <Item
-          onClick={() => {
-            props.changeItemType("sea");
-            navigate("/items/sea");
-          }}
-        >
-          <img src="https://acnhapi.com/v1/icons/sea/8"></img>
-          <p>Mar</p>
-        </Item>
-      </ItemContainer>
+      <ItemContainer>{itemsDisplay}</ItemContainer>
     </div>
   );
 };

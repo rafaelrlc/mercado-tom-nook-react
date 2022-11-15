@@ -60,6 +60,7 @@ const AvaliableItems = (props) => {
   ));
   return (
     <Card className={classes.container_vendas}>
+      {isLoading && <p className={classes.loading}>Carregando...</p>}
       <ul>{avaliable_items}</ul>
     </Card>
   );

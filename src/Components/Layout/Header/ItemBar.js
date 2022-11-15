@@ -2,11 +2,6 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 const Banner = styled.div`
-  @font-face {
-    font-family: "FinkHeavy";
-    src: url("../UI/FinkHeavy.ttf");
-  }
-
   width: 50%;
   background-color: #148fa4;
   border: 3px solid #87c2df;
@@ -29,19 +24,29 @@ const Banner = styled.div`
   }
 `;
 
-const ItemBar = (props) => {
-  const params = useParams();
-  // pode usar o params para setar o itembar também
+const listItems = [
+  {
+    name: "Peixes",
+    type: "fish",
+  },
+  {
+    name: "Insetos",
+    type: "bugs",
+  },
+  {
+    name: "Sea",
+    type: "sea",
+  },
+]; // colocar uma chamada API para pegar esses dados (futuramente)
 
-  let itemShow;
-  if (props.type === "fish") {
-    itemShow = "Peixes";
-  } else if (props.type === "bugs") {
-    itemShow = "Insetos";
-  } else if (props.type === "sea") {
-    itemShow = "Mar";
-  } else {
-    itemShow = "Items";
+const ItemBar = (props) => {
+  const params = useParams(); // pode usar o params para setar o itembar também
+  let itemShow = "Items";
+  console.log(props.type);
+  for (let i = 0; i < listItems.length; i++) {
+    if (listItems[i].type === props.type) {
+      itemShow = listItems[i].name;
+    }
   }
   return (
     <Banner>

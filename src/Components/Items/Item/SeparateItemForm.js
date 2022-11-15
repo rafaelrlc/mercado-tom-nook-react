@@ -67,6 +67,7 @@ const SeparateItemForm = (props) => {
       setAmountValidity(true);
     }
   };
+
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = inputAmount.current.value;

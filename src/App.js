@@ -9,26 +9,15 @@ import SpecificItem from "./pages/specificItem";
 
 function App() {
   const [cartShow, setCartShow] = useState(false);
+
   const [itemBarType, setItemBarType] = useState("");
-
-  const showCartHandler = () => {
-    setCartShow(true);
-  };
-
-  const hideCartHandler = () => {
-    setCartShow(false);
-  };
-
-  const changeItemType = (type) => {
-    setItemBarType(type);
-  };
 
   return (
     <Fragment>
       <CartProvider>
         <header>
-          {cartShow && <Cart onHideCart={hideCartHandler}></Cart>}
-          <MainHeader onShowCart={showCartHandler}></MainHeader>
+          {cartShow && <Cart onHideCart={() => setCartShow(false)}></Cart>}
+          <MainHeader onShowCart={() => setCartShow(true)}></MainHeader>
         </header>
 
         <Routes>
@@ -36,13 +25,17 @@ function App() {
           <Route path="/home" element={<Homepage></Homepage>}></Route>
           <Route
             path={"/items/"}
-            element={<ItemType changeItemType={changeItemType}></ItemType>}
+            element={
+              <ItemType
+                changeItemType={(type) => setItemBarType(type)}
+              ></ItemType>
+            }
           ></Route>
           <Route
             path={`/items/:itemType`}
             element={
               <SpecificItem
-                changeItemType={changeItemType}
+                changeItemType={(type) => setItemBarType(type)}
                 type={itemBarType}
               ></SpecificItem>
             }
