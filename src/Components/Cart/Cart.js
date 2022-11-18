@@ -5,6 +5,7 @@ import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import CheckoutCart from "./CheckoutCart";
 import ItemCartButton from "../UI/ItemCartButton";
+import { useRef } from "react";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -33,7 +34,7 @@ const Cart = (props) => {
     setCheckoutShow(true);
   };
   const cartItems = (
-    <ul className={classes.cart_items}>
+    <div className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
         <CartItem
           id={item.id}
@@ -45,11 +46,11 @@ const Cart = (props) => {
           onAdd={addCartItem.bind(null, item)}
         ></CartItem>
       ))}
-    </ul>
+    </div>
   );
   return (
     <Modal onClose={props.onHideCart}>
-      {!checkoutShow && cartItems}
+      {cartItems}
       {checkoutShow && (
         <CheckoutCart onCancel={() => setCheckoutShow(false)}></CheckoutCart>
       )}

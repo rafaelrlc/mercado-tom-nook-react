@@ -1,7 +1,7 @@
 import classes from "./CartItem.module.css";
 const CartItem = (props) => {
   return (
-    <li className={classes.cart_item} id={props.id}>
+    <div className={classes.cart_item} id={props.id}>
       <div>
         <div className={classes.item}>
           {" "}
@@ -27,7 +27,7 @@ const CartItem = (props) => {
         <button onClick={props.onRemove}>−</button>
         <button onClick={props.onAdd}>+</button>
       </div>
-    </li>
+    </div>
   );
 };
 
