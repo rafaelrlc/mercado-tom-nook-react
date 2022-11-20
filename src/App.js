@@ -4,7 +4,7 @@ import MainHeader from "./Components/Layout/Header/MainHeader";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import Homepage from "./pages/homepage";
-import ItemType from "./pages/selectItemType";
+import ItemType from "./pages/ItemType";
 import SpecificItem from "./pages/specificItem";
 
 function App() {

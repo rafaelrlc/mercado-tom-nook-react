@@ -1,6 +1,7 @@
 import classes from "./Checkout.module.css";
 import ItemCartButton from "../UI/ItemCartButton";
 import { useState, useRef } from "react";
+import userValidationForm from "../../validation/userInfoValidation";
 
 const CheckoutCart = (props) => {
   const nameRef = useRef();
@@ -15,21 +16,17 @@ const CheckoutCart = (props) => {
     city: "",
   });
 
-  const confirmHandler = (event) => {
+  const confirmHandler = async (event) => {
     event.preventDefault();
-
-    const enteredName = nameRef.current.value;
-    const enteredAdress = adressRef.current.value;
-    const enteredPostal = postalRef.current.value;
-    const enteredCity = cityRef.current.value;
+    //const enteredName = nameRef.current.value;
+    //const enteredAdress = adressRef.current.value;
+    //const enteredPostal = postalRef.current.value;
+    //const enteredCity = cityRef.current.value;
 
     // check
+    const isValid = await userValidationForm.isValid(userInfo);
+    console.log(isValid);
 
-    for (const key in userInfo) {
-      console.log(`${key}: ${userInfo[key]}`);
-    }
-
-    console.log(userInfo.length);
     // clear input after submit
     setUserInfo({
       name: "",

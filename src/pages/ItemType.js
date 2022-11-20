@@ -1,8 +1,8 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+/* eslint-disable jsx-a11y/alt-text */
+import { useNavigate } from "react-router-dom";
 import ItemBar from "../Components/Layout/Header/ItemBar";
 import styled from "styled-components";
-import Button from "../Components/UI/Button";
-import { useState, useEffect } from "react";
+
 const ItemContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -29,26 +29,22 @@ const listItems = [
   {
     name: "PEIXES",
     type: "fish",
-    image: "https://acnhapi.com/v1/icons/fish/6",
+    image: "https://dodo.ac/np/images/d/db/Cherry_Salmon_NH_Icon.png",
   },
   {
     name: "INSETOS",
     type: "bugs",
-    image: "https://acnhapi.com/v1/icons/bugs/9",
+    image: "https://dodo.ac/np/images/3/37/Grasshopper_NH_Icon.png",
   },
   {
     name: "MAR",
     type: "sea",
-    image: "https://acnhapi.com/v1/icons/sea/8",
+    image: "https://dodo.ac/np/images/5/58/Octopus_NH_Icon.png",
   },
 ]; // colocar uma chamada API para pegar esses dados (futuramente)
 
 const ItemType = (props) => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [listItem, setListItems] = useState([]);
-
   const itemsDisplay = listItems.map((item) => (
     <Item
       onClick={() => {

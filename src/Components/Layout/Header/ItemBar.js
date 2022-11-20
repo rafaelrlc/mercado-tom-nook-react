@@ -42,7 +42,6 @@ const listItems = [
 const ItemBar = (props) => {
   const params = useParams(); // pode usar o params para setar o itembar também
   let itemShow = "Items";
-  console.log(props.type);
   for (let i = 0; i < listItems.length; i++) {
     if (listItems[i].type === props.type) {
       itemShow = listItems[i].name;
