@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../UI/Button";
+import Button from "../../UI/UI-Components/Button";
 import { useNavigate } from "react-router-dom";
 const StyledItemBar = styled.div`
   top: 0;
@@ -28,7 +28,6 @@ const SellingOpitions = (props) => {
       <div>
         <Button
           onClick={() => {
-            props.changeItemType("fish");
             navigate("/items/fish");
           }}
         >
@@ -38,7 +37,6 @@ const SellingOpitions = (props) => {
       <div>
         <Button
           onClick={() => {
-            props.changeItemType("sea");
             navigate("/items/sea");
           }}
         >
@@ -48,7 +46,6 @@ const SellingOpitions = (props) => {
       <div>
         <Button
           onClick={() => {
-            props.changeItemType("bugs");
             navigate("/items/bugs");
           }}
         >

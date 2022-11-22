@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from "../../UI/Card";
+import Card from "../../UI/UI-Components/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./SeparateItem";
 
@@ -67,7 +67,7 @@ const AvaliableItems = (props) => {
     <Card className={classes.container_vendas}>
       {isLoading && <p className={classes.loading}>Carregando...</p>}
       {error && <h1>{error}</h1>}
-      <ul>{avaliable_items}</ul>
+      <ul>{!isLoading && avaliable_items}</ul>
     </Card>
   );
 };

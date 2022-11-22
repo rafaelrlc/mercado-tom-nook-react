@@ -1,4 +1,4 @@
-import Button from "../Components/UI/Button";
+import Button from "../Components/UI/UI-Components/Button";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 const StyledDiv = styled.div`

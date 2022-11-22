@@ -3,16 +3,17 @@ import Items from "../Components/Items/Items";
 import SellingOpitions from "../Components/Layout/Header/SellingOpitions";
 import ItemBar from "../Components/Layout/Header/ItemBar";
 import { useParams } from "react-router-dom";
-const SpecificItem = (props) => {
-  let itemTypeUrl = useParams();
-  console.log(itemTypeUrl.itemType);
+
+const SelectedItem = (props) => {
+  let params = useParams();
+  console.log(params.itemType);
   return (
     <Fragment>
-      <SellingOpitions changeItemType={props.changeItemType}></SellingOpitions>
-      <ItemBar type={props.type}></ItemBar>
+      <SellingOpitions></SellingOpitions>
+      <ItemBar type={params.itemType}></ItemBar>
       <Items></Items>
     </Fragment>
   );
 };
 
-export default SpecificItem;
+export default SelectedItem;

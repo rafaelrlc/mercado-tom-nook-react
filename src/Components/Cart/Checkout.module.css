@@ -9,6 +9,10 @@
   margin-bottom: 0.5rem;
 }
 
+.errorMessage {
+  color: red;
+  margin: 0;
+}
 .control label {
   font-weight: bold;
   margin-bottom: 0.25rem;

@@ -48,7 +48,6 @@ const ItemType = (props) => {
   const itemsDisplay = listItems.map((item) => (
     <Item
       onClick={() => {
-        props.changeItemType(item.type);
         navigate(`/items/${item.type}`);
       }}
     >

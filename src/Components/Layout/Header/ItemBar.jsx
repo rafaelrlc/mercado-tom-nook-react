@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
 
 const Banner = styled.div`
   width: 50%;
@@ -40,7 +39,6 @@ const listItems = [
 ]; // colocar uma chamada API para pegar esses dados (futuramente)
 
 const ItemBar = (props) => {
-  const params = useParams(); // pode usar o params para setar o itembar também
   let itemShow = "Items";
   for (let i = 0; i < listItems.length; i++) {
     if (listItems[i].type === props.type) {
