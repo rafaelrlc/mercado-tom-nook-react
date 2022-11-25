@@ -67,7 +67,7 @@ const AvaliableItems = (props) => {
     <Card className={classes.container_vendas}>
       {isLoading && <p className={classes.loading}>Carregando...</p>}
       {error && <h1>{error}</h1>}
-      <ul>{!isLoading && avaliable_items}</ul>
+      <ul>{!isLoading && !error && avaliable_items}</ul>
     </Card>
   );
 };

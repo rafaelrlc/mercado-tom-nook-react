@@ -5,7 +5,7 @@ const CartItem = (props) => {
       <div>
         <div className={classes.item}>
           {" "}
-          <img src={props.image} width="45px" height="45px" />
+          <img src={props.image} alt="item-img" width="45px" height="45px" />
           <h2>{props.name}</h2>
         </div>
 
@@ -15,6 +15,7 @@ const CartItem = (props) => {
 
             <img
               src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
+              alt="bells-img-icon"
               width="40px"
               height="40px"
             />

@@ -43,7 +43,7 @@ const SeparateItem = (props) => {
       <li className={classes.item}>
         <div className={classes.info}>
           <div className={classes.item_info}>
-            <img src={props.image} width="50px" height="50px" />
+            <img src={props.image} alt="item-img" width="50px" height="50px" />
             <h3 onClick={() => setExpandItem(!expandItem)}>{props.name}</h3>
           </div>
           <div className={classes.price}>
@@ -52,6 +52,7 @@ const SeparateItem = (props) => {
               src="https://dodo.ac/np/images/thumb/a/a2/100_Bells_NH_Inv_Icon.png/120px-100_Bells_NH_Inv_Icon.png"
               width="45px"
               height="45px"
+              alt="bell-img-icon"
             />
           </div>
         </div>
