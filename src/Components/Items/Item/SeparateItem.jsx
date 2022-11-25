@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemForm";
 import CartContext from "../../../store/cart-context";
+import api from "../../../services/api";
 
 const SeparateItem = (props) => {
   const [expandItem, setExpandItem] = useState(false);
@@ -18,24 +19,11 @@ const SeparateItem = (props) => {
     };
     cartCtx.addItem(item_to_add);
 
-    try {
-      const response = await fetch(
-        "https://tom-nook-cart-default-rtdb.firebaseio.com/cart.json",
-        {
-          method: "POST",
-          body: JSON.stringify({ Object: item_to_add }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Request failed!");
-      }
-    } catch (err) {
-      setError(err.message || "Something went wrong!");
-    }
+    await api.post("/cart.json", {
+      body: {
+        item: item_to_add,
+      },
+    });
   };
 
   return (

@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import CheckoutCart from "./Checkout";
+import api from "../../services/api";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -32,6 +33,17 @@ const Cart = (props) => {
   const goCheckout = () => {
     setCheckoutShow(true);
   };
+
+  const submitOrderHandler = async (userData) => {
+    console.log(cartCtx.itemsStored);
+    await api.post("/orders.json", {
+      body: {
+        user: userData,
+        orderedItems: cartCtx.itemsStored,
+      },
+    });
+  };
+
   const cartItems = (
     <div className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
@@ -51,7 +63,10 @@ const Cart = (props) => {
     <Modal onClose={props.onHideCart}>
       {cartItems}
       {checkoutShow && (
-        <CheckoutCart onCancel={() => setCheckoutShow(false)}></CheckoutCart>
+        <CheckoutCart
+          onConfirm={submitOrderHandler}
+          onCancel={() => setCheckoutShow(false)}
+        ></CheckoutCart>
       )}
       <div className={classes.total}>
         {!showOrderButton ? (

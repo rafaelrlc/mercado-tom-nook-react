@@ -14,16 +14,7 @@ const AvaliableItems = (props) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(
-        `https://api.nookipedia.com/nh/${props.type}`,
-        {
-          method: "GET",
-          headers: {
-            "X-API-KEY": "85a82f18-2c5e-40cb-a287-fa7dd134ae79",
-            "Accept-Version": "1.5.0",
-          },
-        }
-      );
+      const response = await fetch(`https://acnhapi.com/v1/${props.type}`);
 
       if (!response.ok) {
         throw new Error("Request failed!");
@@ -33,11 +24,11 @@ const AvaliableItems = (props) => {
       for (var item in data) {
         // item é o index do array de objetos
         itemObject = {
-          id: data[item]["number"],
-          name: data[item]["name"],
-          price: data[item]["sell_nook"],
-          description: "this api doesnt support description",
-          image: data[item]["image_url"],
+          id: data[item]["id"],
+          price: data[item]["price"],
+          name: data[item]["name"]["name-USen"],
+          description: data[item]["museum-phrase"],
+          image: data[item]["icon_uri"],
         };
         itemList.push(itemObject);
       }

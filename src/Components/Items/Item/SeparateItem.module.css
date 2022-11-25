@@ -39,6 +39,10 @@ ul {
 .item_info h3 {
   margin: 0 0 0.25rem 0.25rem;
 }
+
+.item_info h3::first-letter {
+  text-transform: capitalize;
+}
 .item_info h3:hover {
   color: #944a05;
   cursor: pointer;

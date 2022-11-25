@@ -13,8 +13,9 @@ const CheckoutCart = (props) => {
   } = useForm({ resolver: yupResolver(userValidationSchema) });
 
   const confirmHandler = (data) => {
-    //enviar para API
     reset();
+    console.log(data);
+    props.onConfirm(data);
   };
 
   return (
