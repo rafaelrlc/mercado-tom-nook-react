@@ -1,18 +1,11 @@
-import { useState } from "react";
-import MainHeader from "./Components/Layout/Header/MainHeader";
 import CartProvider from "./store/CartProvider";
-import Cart from "./Components/Cart/Cart";
 import Rotas from "./routes";
+import Header from "./Components/Layout/Header";
 
 function App() {
-  const [cartShow, setCartShow] = useState(false);
-
   return (
     <CartProvider>
-      <header>
-        {cartShow && <Cart onHideCart={() => setCartShow(false)}></Cart>}
-        <MainHeader onShowCart={() => setCartShow(true)}></MainHeader>
-      </header>
+      <Header></Header>
       <Rotas></Rotas>
     </CartProvider>
   );

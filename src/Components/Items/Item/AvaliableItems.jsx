@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../../UI/UI-Components/Card";
 import classes from "./AvaliableItems.module.css";
@@ -14,15 +15,10 @@ const AvaliableItems = (props) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`https://acnhapi.com/v1/${props.type}`);
-
-      if (!response.ok) {
-        throw new Error("Request failed!");
-      }
-      const data = await response.json();
+      const response = await axios.get(`https://acnhapi.com/v1/${props.type}`);
+      const data = response.data;
 
       for (var item in data) {
-        // item é o index do array de objetos
         itemObject = {
           id: data[item]["id"],
           price: data[item]["price"],
@@ -34,7 +30,8 @@ const AvaliableItems = (props) => {
       }
       setListItems(itemList);
     } catch (err) {
-      setError(err.message || "Something went wrong!");
+      setError("Something went wrong!");
+      console.log(error.response);
     }
 
     setIsLoading(false);
