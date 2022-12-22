@@ -15,7 +15,7 @@ const AvaliableItems = (props) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`https://acnhapi.com/v1/${props.type}`);
+      const response = await axios(`https://acnhapi.com/v1/${props.type}`);
       const data = response.data;
 
       for (var item in data) {
@@ -53,7 +53,7 @@ const AvaliableItems = (props) => {
   ));
   return (
     <Card className={classes.container_vendas}>
-      {isLoading && <p className={classes.loading}>Carregando...</p>}
+      {!error && isLoading && <p className={classes.loading}>Carregando...</p>}
       {error && <h1>{error}</h1>}
       <ul>{!isLoading && !error && avaliable_items}</ul>
     </Card>

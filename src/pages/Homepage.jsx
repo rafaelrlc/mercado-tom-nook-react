@@ -12,16 +12,20 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Homepage = () => {
+const Homepage = (props) => {
   const navigate = useNavigate();
+
+  const onClickHandler = () => {
+    if (props.JTW === null) {
+      navigate("/items");
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <StyledDiv>
-      <Button
-        onClick={() => {
-          navigate("/items");
-        }}
-        className="bigger"
-      >
+      <Button onClick={onClickHandler} className="bigger">
         GO TO ITEMS
       </Button>
     </StyledDiv>
