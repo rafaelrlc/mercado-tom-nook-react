@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../UI/UI-Components/Button";
+import ACButton from "../../UI/UI-Components/Button";
 import { useNavigate } from "react-router-dom";
 const StyledItemBar = styled.div`
   top: 0;
@@ -26,13 +26,13 @@ const SellingOpitions = (props) => {
   return (
     <StyledItemBar>
       <div>
-        <Button
+        <ACButton
           onClick={() => {
             navigate("/items/fish");
           }}
         >
           PEIXES
-        </Button>
+        </ACButton>
       </div>
       <div>
         <Button

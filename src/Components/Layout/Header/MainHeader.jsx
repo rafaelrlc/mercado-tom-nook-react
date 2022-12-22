@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { Fragment } from "react";
 import CartButton from "../Cart/CartButton";
 import { useNavigate } from "react-router-dom";
-
 import tom_nook_nav from "../../UI/images/kindpng_6766832.png";
-
+import AuthContext from "../../../store/authContext";
+import { useContext } from "react";
 const StyledHeader = styled.header`
   top: 0;
   left: 0;
@@ -48,6 +48,7 @@ const StyledHeader = styled.header`
 
 const MainHeader = (props) => {
   const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
 
   return (
     <Fragment>
@@ -57,7 +58,7 @@ const MainHeader = (props) => {
           width="80px"
           height="80px"
           alt="tom-nook-img"
-          onClick={() => navigate("/home")}
+          onClick={() => authCtx.logout()}
         />
         <h1>Mercadinho Tom Nook</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>

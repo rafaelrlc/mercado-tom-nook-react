@@ -7,21 +7,26 @@ const AuthContextProvider = (props) => {
 
   const isUserLogged = !!token;
 
-  const login = (token) => {
+  const loginHandler = (token) => {
+    console.log(token);
     setToken(token);
     localStorage.setItem("token", token);
   };
 
-  const logout = () => {
+  const logoutHandler = () => {
+    console.log("foi");
     setToken(null);
     localStorage.removeItem("token");
   };
 
+  const test = () => {
+    console.log("uyeruey");
+  };
   const contextValue = {
     JWT: token,
     isUserLogged: isUserLogged,
-    login: login,
-    logout: logout,
+    login: loginHandler,
+    logout: logoutHandler,
   };
 
   return (

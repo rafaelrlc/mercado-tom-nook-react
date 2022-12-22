@@ -1,4 +1,4 @@
-import Button from "../Components/UI/UI-Components/Button";
+import ACButton from "../Components/UI/UI-Components/Button";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 const StyledDiv = styled.div`
@@ -25,9 +25,9 @@ const Homepage = (props) => {
 
   return (
     <StyledDiv>
-      <Button onClick={onClickHandler} className="bigger">
+      <ACButton onClick={onClickHandler} className="bigger">
         GO TO ITEMS
-      </Button>
+      </ACButton>
     </StyledDiv>
   );
 };

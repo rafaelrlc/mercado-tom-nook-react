@@ -60,7 +60,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = (props) => {
+const ACButton = (props) => {
   return (
     <StyledButton
       type={props.type || "button"}
@@ -73,4 +73,4 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default ACButton;

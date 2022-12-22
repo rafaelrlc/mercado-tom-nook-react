@@ -30,16 +30,19 @@ const listItems = [
     name: "PEIXES",
     type: "fish",
     image: "https://dodo.ac/np/images/d/db/Cherry_Salmon_NH_Icon.png",
+    key: 1,
   },
   {
     name: "INSETOS",
     type: "bugs",
     image: "https://dodo.ac/np/images/3/37/Grasshopper_NH_Icon.png",
+    key: 2,
   },
   {
     name: "MAR",
     type: "sea",
     image: "https://dodo.ac/np/images/5/58/Octopus_NH_Icon.png",
+    key: 3,
   },
 ]; // colocar uma chamada API para pegar esses dados (futuramente)
 
