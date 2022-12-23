@@ -17,7 +17,14 @@ const Rotas = () => {
   return (
     <Routes>
       <Route path={"/"} element={<Navigate to={"/home"}></Navigate>}></Route>
-      <Route path={"/home"} element={<Homepage JWT={JWT}></Homepage>}></Route>
+      <Route
+        path={"/home"}
+        element={
+          <PublicRoute JWT={JWT}>
+            <Homepage JWT={JWT}></Homepage>
+          </PublicRoute>
+        }
+      ></Route>
       <Route
         path={"/login"}
         element={<LoginPage type="login"></LoginPage>}

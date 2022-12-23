@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { CircularProgress } from "@mui/material";
 const PrivateRoute = (props) => {
   const navigate = useNavigate();
 
@@ -11,11 +11,7 @@ const PrivateRoute = (props) => {
   }, [props.JWT]);
 
   if (props.JWT === null) {
-    return (
-      <div className="">
-        <h1>PUT A SPINNER HERE</h1>
-      </div>
-    );
+    return <CircularProgress></CircularProgress>;
   } else {
     return <div>{props.children}</div>;
   }

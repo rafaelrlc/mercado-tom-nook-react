@@ -13,13 +13,13 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ACButton from "../Components/UI/UI-Components/Button";
 
 import tom_nook_icon from "../Components/UI/images/kindpng_6766832.png";
+import tom_nook_icon_green from "../Components/UI/images/tom_green_bg.jpg";
 
 function Copyright(props) {
   return (
@@ -111,6 +111,10 @@ const LoginPage2 = (props) => {
     } catch (e) {
       console.log(e.response.data.error);
     }
+
+    //try {
+    //const response = await UserApi.post(url,params,config)
+    //}
   };
 
   const redirectPage = () => {
@@ -132,11 +136,11 @@ const LoginPage2 = (props) => {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "white", borderRadius: "0px" }}>
+        <Avatar sx={{ m: 1, bgcolor: "white", borderRadius: "8px" }}>
           <img
-            src={tom_nook_icon}
-            width="40px"
-            height="40px"
+            src={tom_nook_icon_green}
+            width="45px"
+            height="45px"
             alt="tom_nook_icon"
           />
         </Avatar>

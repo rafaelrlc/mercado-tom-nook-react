@@ -5,15 +5,15 @@ const PublicRoute = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (props.JTW !== null) {
+    if (props.JWT !== null) {
       navigate("/items");
     }
   }, []);
 
-  if (JWT !== null) {
-    return <h1>oi</h1>;
+  if (props.JWT !== null) {
+    return <CircularProgress />;
   } else {
-    return <>{children}</>;
+    return <>{props.children}</>;
   }
 };
 

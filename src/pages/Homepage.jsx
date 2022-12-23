@@ -16,19 +16,13 @@ const Homepage = (props) => {
 
   const onClickHandler = () => {
     console.log(props.JWT);
-    if (props.JWT === null) {
-      navigate("/login");
-    }
-    if (props.JWT !== null) {
-      console.log("teste");
-      navigate("/items");
-    }
+    navigate("/login");
   };
 
   return (
     <StyledDiv>
       <ACButton onClick={onClickHandler} className="bigger">
-        GO TO ITEMS
+        Sing In
       </ACButton>
     </StyledDiv>
   );
