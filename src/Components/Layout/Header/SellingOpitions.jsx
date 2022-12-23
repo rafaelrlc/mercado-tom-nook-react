@@ -35,22 +35,22 @@ const SellingOpitions = (props) => {
         </ACButton>
       </div>
       <div>
-        <Button
+        <ACButton
           onClick={() => {
             navigate("/items/sea");
           }}
         >
           MAR
-        </Button>
+        </ACButton>
       </div>
       <div>
-        <Button
+        <ACButton
           onClick={() => {
             navigate("/items/bugs");
           }}
         >
           INSETOS
-        </Button>
+        </ACButton>
       </div>
     </StyledItemBar>
   );

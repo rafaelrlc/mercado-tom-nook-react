@@ -6,7 +6,7 @@ const PrivateRoute = (props) => {
 
   useEffect(() => {
     if (props.JWT === null) {
-      navigate("/");
+      navigate("/home");
     }
   }, [props.JWT]);
 

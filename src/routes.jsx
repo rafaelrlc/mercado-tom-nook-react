@@ -4,11 +4,14 @@ import AuthContext from "./store/authContext";
 import Homepage from "./pages/Homepage";
 import ItemType from "./pages/ItemType";
 import SelectedItem from "./pages/SelectedItem";
-import LoginPage2 from "./pages/LoginPage2";
 import LoginPage from "./pages/LoginPage";
+
 import PrivateRoute from "./Components/Routes/PrivateRoute";
+import PublicRoute from "./Components/Routes/PublicRoute";
+
 const Rotas = () => {
   const { JWT } = useContext(AuthContext);
+  console.log("TIPO JWT:");
   console.log(JWT);
 
   return (
@@ -17,11 +20,11 @@ const Rotas = () => {
       <Route path={"/home"} element={<Homepage JWT={JWT}></Homepage>}></Route>
       <Route
         path={"/login"}
-        element={<LoginPage2 type="login"></LoginPage2>}
+        element={<LoginPage type="login"></LoginPage>}
       ></Route>
       <Route
         path={"/create"}
-        element={<LoginPage2 type="create"></LoginPage2>}
+        element={<LoginPage type="create"></LoginPage>}
       ></Route>
       <Route
         path={"/items/"}

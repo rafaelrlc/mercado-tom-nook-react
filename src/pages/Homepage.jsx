@@ -11,15 +11,17 @@ const StyledDiv = styled.div`
     transition: all 0.5 ease;
   }
 `;
-
 const Homepage = (props) => {
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    if (props.JTW === null) {
-      navigate("/items");
-    } else {
+    console.log(props.JWT);
+    if (props.JWT === null) {
       navigate("/login");
+    }
+    if (props.JWT !== null) {
+      console.log("teste");
+      navigate("/items");
     }
   };
 
