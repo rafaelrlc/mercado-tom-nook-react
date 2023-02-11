@@ -26,6 +26,7 @@ const StyledButton = styled.button`
   align-items: center;
   font-weight: bold;
   transition: all 0.2 ease;
+  text-align: center;
 
   &:hover {
     transition: all 0.2 ease;

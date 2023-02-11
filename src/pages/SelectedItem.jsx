@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 const SelectedItem = (props) => {
   let params = useParams();
-  console.log(params.itemType);
   return (
     <Fragment>
       <SellingOpitions></SellingOpitions>

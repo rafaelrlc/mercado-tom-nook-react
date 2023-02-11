@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import tom_nook_nav from "../../UI/images/kindpng_6766832.png";
 import AuthContext from "../../../store/authContext";
 import { useContext } from "react";
+
 const StyledHeader = styled.header`
   top: 0;
   left: 0;
@@ -61,7 +62,9 @@ const MainHeader = (props) => {
           onClick={() => authCtx.logout()}
         />
         <h1>Mercadinho Tom Nook</h1>
-        <CartButton onClick={props.onShowCart}>Cart</CartButton>
+        {authCtx.JWT && (
+          <CartButton onClick={props.onShowCart}>Cart</CartButton>
+        )}
       </StyledHeader>
     </Fragment>
   );

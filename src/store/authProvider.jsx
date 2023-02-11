@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import AuthContext from "./authContext";
 
 const AuthContextProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  console.log(token);
-
   const isUserLogged = !!token;
 
   const loginHandler = (token) => {

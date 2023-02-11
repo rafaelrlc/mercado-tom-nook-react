@@ -16,6 +16,12 @@ ul {
   column-count: 1;
 }
 
+@media (max-width: 970px) {
+  .item_info {
+    font-size: 0px;
+  }
+}
+
 .info {
   display: flex;
   gap: 1rem;

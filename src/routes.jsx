@@ -11,27 +11,34 @@ import PublicRoute from "./Components/Routes/PublicRoute";
 
 const Rotas = () => {
   const { JWT } = useContext(AuthContext);
-  console.log("TIPO JWT:");
-  console.log(JWT);
 
   return (
     <Routes>
+      <Route path={"*"} element={<Navigate to={"/home"}></Navigate>}></Route>
       <Route path={"/"} element={<Navigate to={"/home"}></Navigate>}></Route>
       <Route
         path={"/home"}
         element={
           <PublicRoute JWT={JWT}>
-            <Homepage JWT={JWT}></Homepage>
+            <Homepage></Homepage>
           </PublicRoute>
         }
       ></Route>
       <Route
         path={"/login"}
-        element={<LoginPage type="login"></LoginPage>}
+        element={
+          <PublicRoute JWT={JWT}>
+            <LoginPage type="login"></LoginPage>
+          </PublicRoute>
+        }
       ></Route>
       <Route
         path={"/create"}
-        element={<LoginPage type="create"></LoginPage>}
+        element={
+          <PublicRoute JWT={JWT}>
+            <LoginPage type="create"></LoginPage>
+          </PublicRoute>
+        }
       ></Route>
       <Route
         path={"/items/"}

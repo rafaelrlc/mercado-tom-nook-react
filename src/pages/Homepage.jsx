@@ -15,7 +15,6 @@ const Homepage = (props) => {
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    console.log(props.JWT);
     navigate("/login");
   };
 

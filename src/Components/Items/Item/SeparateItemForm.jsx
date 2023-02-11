@@ -21,6 +21,10 @@ const StyledItemForm = styled.form`
     padding-left: 0.35rem;
     margin: 0;
   }
+
+  @media (max-width: 970px) {
+    display: hidden;
+  }
 `;
 
 const AddButton = styled.button`

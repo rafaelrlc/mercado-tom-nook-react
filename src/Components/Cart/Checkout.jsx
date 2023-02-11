@@ -3,7 +3,7 @@ import ItemCartButton from "../UI/UI-Components/ItemCartButton";
 import userValidationSchema from "../../validation/userInfoValidation";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import StyledError from "../UI/UI-Components/ErrorYup";
 const CheckoutCart = (props) => {
   const {
     register,
@@ -30,9 +30,7 @@ const CheckoutCart = (props) => {
               placeholder="Seu Nome"
               {...register("name")}
             />
-            {errors.name && (
-              <p className={classes.errorMessage}>{errors.name.message}</p>
-            )}
+            {errors.name && <StyledError>{errors.name.message}</StyledError>}
           </div>
           <div className={classes.control}>
             <label htmlFor="adress">Endereço</label>
@@ -43,7 +41,7 @@ const CheckoutCart = (props) => {
               placeholder="Ex: Rua Oscar Freire"
             />
             {errors.adress && (
-              <p className={classes.errorMessage}>{errors.adress.message}</p>
+              <StyledError>{errors.adress.message}</StyledError>
             )}
           </div>
           <div className={classes.control}>
@@ -55,7 +53,7 @@ const CheckoutCart = (props) => {
               placeholder="000000-00"
             />
             {errors.postal && (
-              <p className={classes.errorMessage}>{errors.postal.message}</p>
+              <StyledError>{errors.postal.message}</StyledError>
             )}
           </div>
           <div className={classes.control}>
