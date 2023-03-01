@@ -12,6 +12,7 @@ const PublicRoute = (props) => {
 
   if (props.JWT !== null) {
     return <CircularProgress />;
+    console.log("Oi")
   } else {
     return <>{props.children}</>;
   }
