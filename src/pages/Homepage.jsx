@@ -15,7 +15,7 @@ const Homepage = (props) => {
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    navigate("/login");
+    navigate("/items");
   };
 
   return (

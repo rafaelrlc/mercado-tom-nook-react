@@ -62,9 +62,7 @@ const MainHeader = (props) => {
           onClick={() => authCtx.logout()}
         />
         <h1>Mercadinho Tom Nook</h1>
-        {authCtx.JWT && (
-          <CartButton onClick={props.onShowCart}>Cart</CartButton>
-        )}
+        <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
     </Fragment>
   );

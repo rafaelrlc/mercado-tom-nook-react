@@ -5,16 +5,12 @@ const PrivateRoute = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (props.JWT === null) {
-      navigate("/home");
-    }
+    // if (props.JWT === null) {
+    //   navigate("/home");
+    // }
   }, [props.JWT]);
 
-  if (props.JWT === null) {
-    return <CircularProgress></CircularProgress>;
-  } else {
-    return <div>{props.children}</div>;
-  }
+  return <div>{props.children}</div>;
 };
 
 export default PrivateRoute;

@@ -1,5 +1,6 @@
 .item {
   display: flex;
+  width: 40vw;
   justify-content: space-between;
   margin: 1rem;
   padding-bottom: 1rem;
@@ -72,7 +73,7 @@ ul {
   color: rgb(51, 43, 36);
   margin: 1rem;
   padding-bottom: 1rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   padding: 1rem;
 
   align-items: center;

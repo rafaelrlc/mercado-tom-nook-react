@@ -8,20 +8,14 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import ACButton from "../UI/UI-Components/Button";
-import userCreateSchema from "../../validation/userCreateValidation";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import tom_nook_icon_green from "../UI/images/tom_green_bg.jpg";
-import StyledError from "../UI/UI-Components/ErrorYup";
 
 function Copyright(props) {
   return (
@@ -82,6 +76,7 @@ const Login = (props) => {
   const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
   const [invalidCredentials, setInvalidCredentials] = useState(false);
+
   let createAccount = true;
   if (props.type == "login") {
     createAccount = false;
@@ -215,12 +210,7 @@ const Login = (props) => {
               )}
             </Grid>
             <Grid item>
-              <Link
-                href="#"
-                variant="body2"
-                onClick={redirectPage}
-                relative="path"
-              >
+              <Link variant="body2" onClick={redirectPage} relative="path">
                 {createAccount
                   ? "Já possui uma conta?"
                   : "Não possui uma conta?"}
