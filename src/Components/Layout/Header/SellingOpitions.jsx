@@ -31,7 +31,7 @@ const SellingOpitions = (props) => {
             navigate("/items/fish");
           }}
         >
-          PEIXES
+          FISH
         </ACButton>
       </div>
       <div>
@@ -40,7 +40,7 @@ const SellingOpitions = (props) => {
             navigate("/items/sea");
           }}
         >
-          MAR
+          SEA
         </ACButton>
       </div>
       <div>
@@ -49,7 +49,7 @@ const SellingOpitions = (props) => {
             navigate("/items/bugs");
           }}
         >
-          INSETOS
+          BUGS
         </ACButton>
       </div>
     </StyledItemBar>

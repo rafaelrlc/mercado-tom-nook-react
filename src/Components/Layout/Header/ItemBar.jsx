@@ -25,11 +25,11 @@ const Banner = styled.div`
 
 const listItems = [
   {
-    name: "Peixes",
+    name: "Fish",
     type: "fish",
   },
   {
-    name: "Insetos",
+    name: "Bugs",
     type: "bugs",
   },
   {
