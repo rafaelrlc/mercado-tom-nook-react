@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
 import CheckoutCart from "./Checkout";
-import api from "../../services/api";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
@@ -34,16 +33,6 @@ const Cart = (props) => {
     setCheckoutShow(true);
   };
 
-  const submitOrderHandler = async (userData) => {
-    console.log(cartCtx.itemsStored);
-    await api.post("/orders.json", {
-      body: {
-        user: userData,
-        orderedItems: cartCtx.itemsStored,
-      },
-    });
-  };
-
   const cartItems = (
     <div className={classes.cart_items}>
       {cartCtx.itemsStored.map((item) => (
@@ -64,15 +53,14 @@ const Cart = (props) => {
       {cartItems}
       {checkoutShow && (
         <CheckoutCart
-          onConfirm={submitOrderHandler}
           onCancel={() => setCheckoutShow(false)}
         ></CheckoutCart>
       )}
       <div className={classes.total}>
         {!showOrderButton ? (
-          <span>Carrinho Vazio</span>
+          <span>Empty Cart</span>
         ) : (
-          <span>Valor Total:</span>
+          <span>Total Amount:</span>
         )}
         <div className={classes.item_price}>
           <span>{cartCtx.totalAmount}</span>
@@ -93,11 +81,11 @@ const Cart = (props) => {
             </ItemCartButton>
           )}
           <ItemCartButton onClick={props.onHideCart} className="close">
-            Fechar
+            Close
           </ItemCartButton>
           {showOrderButton && (
             <ItemCartButton onClick={goCheckout} className="confirm">
-              Comprar
+              Buy
             </ItemCartButton>
           )}
         </div>

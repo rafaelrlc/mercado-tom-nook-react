@@ -59,9 +59,11 @@ const MainHeader = (props) => {
           width="80px"
           height="80px"
           alt="tom-nook-img"
-          onClick={() => authCtx.logout()}
+          onClick={() => {
+            navigate("/");
+          }}
         />
-        <h1>Mercadinho Tom Nook</h1>
+        <h1>Tom Nook's Market</h1>
         <CartButton onClick={props.onShowCart}>Cart</CartButton>
       </StyledHeader>
     </Fragment>
