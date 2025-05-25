@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Card from "../../UI/UI-Components/Card";
 import classes from "./AvaliableItems.module.css";
 import SeparateItem from "./SeparateItem";
+import { getItems } from "../../../services/api";
 
 const AvaliableItems = (props) => {
   const [listItems, setListItems] = useState([]);
@@ -15,16 +16,16 @@ const AvaliableItems = (props) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await axios(`https://acnhapi.com/v1/${props.type}`);
+      const response = await getItems(props.type);
       const data = response.data;
 
       for (var item in data) {
         itemObject = {
-          id: data[item]["id"],
-          price: data[item]["price"],
-          name: data[item]["name"]["name-USen"],
-          description: data[item]["museum-phrase"],
-          image: data[item]["icon_uri"],
+          id: data[item]["number"],
+          price: data[item]["sell_nook"],
+          name: data[item]["name"],
+          description: data[item]["catchphrases"][0],
+          image: data[item]["image_url"],
         };
         itemList.push(itemObject);
       }
@@ -53,7 +54,7 @@ const AvaliableItems = (props) => {
   ));
   return (
     <Card className={classes.container_vendas}>
-      {!error && isLoading && <p className={classes.loading}>Carregando...</p>}
+      {!error && isLoading && <p className={classes.loading}>Loading...</p>}
       {error && <h1>{error}</h1>}
       <ul>{!isLoading && !error && avaliable_items}</ul>
     </Card>

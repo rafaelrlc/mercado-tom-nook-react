@@ -6,7 +6,7 @@ const CartItem = (props) => {
         <div className={classes.item}>
           {" "}
           <img src={props.image} alt="item-img" width="45px" height="45px" />
-          <h2>{props.name}</h2>
+          <h2>{props.name.charAt(0).toUpperCase() + props.name.slice(1)}</h2>
         </div>
 
         <div className={classes.summary}>

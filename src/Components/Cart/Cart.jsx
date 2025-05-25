@@ -77,7 +77,7 @@ const Cart = (props) => {
         <div className={classes.actions}>
           {showOrderButton && (
             <ItemCartButton onClick={clearCart} className="close">
-              Limpar Carrinho
+              Clear Cart
             </ItemCartButton>
           )}
           <ItemCartButton onClick={props.onHideCart} className="close">

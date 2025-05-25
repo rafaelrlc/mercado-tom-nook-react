@@ -15,35 +15,64 @@ const StyledHeader = styled.header`
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
+
   & img {
-    margin-left: 2%;
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
   }
 
   & img:hover {
-    margin-top: 0.75rem;
+    transform: translateY(-0.75rem);
     cursor: pointer;
   }
+
   & h1 {
     margin: 0;
-    margin-left: 2%;
-    margin-top: 0.75rem;
     font-family: "FinkHeavy";
     font-size: 3.5rem;
     color: white;
     padding: 1.5rem;
     border-radius: 1rem;
+    transition: all 0.3s ease;
   }
 
   & h1:hover {
-    margin-top: 1.25rem;
+    transform: translateY(-0.5rem);
   }
 
-  div {
-    color: red;
-    width: 30px;
-    height: 30px;
+  @media (max-width: 768px) {
+    height: 7rem;
+    padding: 0 1rem;
+
+    & img {
+      width: 60px;
+      height: 60px;
+    }
+
+    & h1 {
+      font-size: 2.5rem;
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 6rem;
+    padding: 0 0.5rem;
+
+    & img {
+      width: 50px;
+      height: 50px;
+    }
+
+    & h1 {
+      font-size: 1.8rem;
+      padding: 0.5rem;
+    }
   }
 `;
 

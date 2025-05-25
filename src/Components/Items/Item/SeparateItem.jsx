@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import classes from "./SeparateItem.module.css";
 import SeparateItemForm from "./SeparateItemForm";
 import CartContext from "../../../store/cart-context";
-import api from "../../../services/api";
+
 
 const SeparateItem = (props) => {
   const [expandItem, setExpandItem] = useState(false);
@@ -19,11 +19,6 @@ const SeparateItem = (props) => {
     };
     cartCtx.addItem(item_to_add);
 
-    await api.post("/cart.json", {
-      body: {
-        item: item_to_add,
-      },
-    });
   };
 
   return (

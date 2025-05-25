@@ -1,17 +1,28 @@
 import styled from "styled-components";
 
 const Banner = styled.div`
-  width: 50%;
+  width: 90%;
+  max-width: 600px;
   background-color: #148fa4;
   border: 3px solid #87c2df;
   color: white;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "FinkHeavy";
   margin: auto;
   margin-top: 1.5rem;
   border-radius: 1.25rem;
   padding: 0.25rem 1rem;
+
+  @media (min-width: 768px) {
+    width: 70%;
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50%;
+    font-size: 2rem;
+  }
 
   &:hover {
     background-color: #14899e;
