@@ -30,7 +30,7 @@ const Cart = (props) => {
   };
 
   const goCheckout = () => {
-    setCheckoutShow(true);
+    // setCheckoutShow(true);
   };
 
   const cartItems = (
