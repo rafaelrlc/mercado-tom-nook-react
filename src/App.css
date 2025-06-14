@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'FinkHeavy';
+  src: url('./assets/fonts/FinkHeavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'FinkHeavy', Arial, sans-serif;
+}
 
 .App {
   text-align: center;
